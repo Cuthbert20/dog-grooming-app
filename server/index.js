@@ -15,6 +15,9 @@ app.use(session({
         maxAge: 1000 * 60 * 60 * 8
     }
 }))
+//end points
+
+
 
 massive(CONNECTION_STRING).then(db => {
     app.set('db', db)
