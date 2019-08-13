@@ -1,5 +1,7 @@
 import React from 'react';
 import './App.css';
+import routes from './routes';
+import { HashRouter } from 'react-router-dom'
 import AdminDash from '../src/components/AdminDash/AdminDash'
 import Booking from '../src/components/Booking/Booking'
 import Contact from '../src/components/Contact/Contact'
@@ -13,19 +15,22 @@ import UserList from '../src/components/UserList/UserList'
 
 function App() {
   return (
+    <HashRouter>
     <div className="App">
      App
-     <AdminDash />
+     {/* <AdminDash />
      <Booking />
      <Contact />
      <Login />
-     <Main />
+     <Main /> */}
      <Nav />
-     <Register />
+     {routes}
+     {/* <Register />
      <SetupApp />
      <UserDash />
-     <UserList />
+     <UserList /> */}
     </div>
+    </HashRouter>
   );
 }
 
