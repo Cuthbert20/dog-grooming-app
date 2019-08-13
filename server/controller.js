@@ -3,10 +3,28 @@ const bcrypt = require('bcryptjs')
 module.exports = {
    login: async (req,res) => {
        const db = req.app.get('db')
-       const { login_name } = req.body
-       const login = await db.user_login([login_name])
+       const { login_name, password } = req.body
+       const foundUser = await db.user_login([login_name])
        //here we are putting user on session. We can now access the whole user object on front end.
-        req.session.user = login[0]
+        const user = foundUser[0]
+        //if user doesn't exist we will send a status 401 error code
+        if(!user){
+            return res.status(401).send('User not found, please register')
+        }
+        //creating a const using bcrypt.compareSync takes in 2 params password, user.hash
+        console.log(user)
+        const isAuthenticated = bcrypt.compareSync(password, user.password)//refers to hashed password from registration that lives on the user obj on database.
+        if(!isAuthenticated){
+            res.status(403).send('Wrong PassWord')
+        }
+        req.session.user = {
+            //the value on the left is what we will reference when we access the data on the front end.
+            //the name on the left side is what the front end will see when refering to the key value pair ie obj
+            user_id: user.user_id,
+                email: user.email,
+                login_name: user.login_name,  
+                admin_user: user.admin_user
+        }
         console.log(req.session)
        res.status(200).send(req.session.user)
    } ,
@@ -28,13 +46,14 @@ module.exports = {
            const registeredUser = await db.register_user({login_name, email, hash})
            let user = registeredUser[0]
            req.session.user = {
+               //the name on the left side is what the front end will see when refering to the key value pair ie obj
                 user_id: user.user_id,
                 email: user.email,
                 login_name: user.login_name,  
                 admin_user: user.admin_user
 
            }
-           console.log(req.session)
+           console.log(req.session.user)
            res.status(201).send(req.session.user)
        }
        

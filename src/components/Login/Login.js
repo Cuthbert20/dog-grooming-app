@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import Button from 'react-bootstrap/Button';
 
 export default class Login extends Component{
     state={
@@ -25,7 +26,7 @@ export default class Login extends Component{
             <div>
                 <input onChange={e => this.handleChange(e, 'login_name')} value={login_name} placeholder="login Name" type="text"/>
                 <input onChange={e => this.handleChange(e, 'password')} value={password} placeholder='password' type="text"/>
-                <button onClick={this.login} >Click Me</button>
+                <Button size='sm' variant="outline-info" onClick={this.login} >Click Me</Button>
             </div>
         )
     }
