@@ -28,3 +28,8 @@ SELECT * FROM users
 WHERE login_name = 'smitty'
 AND
 password = '1234';
+
+--registering user/adding user to database
+INSERT INTO users (username, email, password, admin_user)
+VALUES
+('Sam', 'sam@me.com', '1234', false);
