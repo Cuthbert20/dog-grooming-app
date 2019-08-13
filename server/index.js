@@ -4,6 +4,7 @@ const express = require('express')
 const app = express()
 const massive = require('massive')
 const session = require('express-session')
+const ctrl = require('./controller')
 
 //middleware
 app.use(express.json())
@@ -16,7 +17,7 @@ app.use(session({
     }
 }))
 //end points
-
+app.post('/auth/login', ctrl.login)
 
 
 massive(CONNECTION_STRING).then(db => {
