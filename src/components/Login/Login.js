@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import Button from 'react-bootstrap/Button';
+// import InputGroup from 'react-bootstrap/InputGroup'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { setUser } from '../../ducks/reducer'
@@ -26,14 +27,11 @@ class Login extends Component{
         // console.log(this.props, 'hit')
         // .then(res => {
         //     this.setState({
-        //         //should I reset state of login_name to ''
+        //         should I reset state of login_name to ''
         //         login_name: res.data.login_name,
         //         password: ''
         //     })
         //     console.log(this.state)
-        // })
-        // .catch(err => {
-        //     alert(err, 'no such user')
         // })
     }
     render(){
@@ -42,7 +40,8 @@ class Login extends Component{
             <div>
                 <input onChange={e => this.handleChange(e, 'login_name')} value={login_name} placeholder="login Name" type="text"/>
                 <input onChange={e => this.handleChange(e, 'password')} value={password} placeholder='password' type="password"/>
-                <Link to='/dashboard' ><Button size='md' variant="outline-info" onClick={this.login} >Click Me</Button></Link>
+                <Link to='/dashboard' ><Button size='sm' variant="outline-info" onClick={this.login} >Click Me</Button></Link>
+                <Link to='/' ><Button size='sm' variant="outline-info" >Back</Button></Link>
             </div>
         )
     }

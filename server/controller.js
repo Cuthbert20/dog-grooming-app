@@ -2,7 +2,8 @@ const bcrypt = require('bcryptjs')
 
 module.exports = {
    login: async (req,res) => {
-       const db = req.app.get('db')
+       try{
+        const db = req.app.get('db')
        const { login_name, password } = req.body
        const foundUser = await db.user_login([login_name])
        //here we are putting user on session. We can now access the whole user object on front end.
@@ -27,6 +28,11 @@ module.exports = {
         }
         console.log(req.session)
        res.status(200).send(req.session.user)
+       }
+       catch(error){
+           res.sendStatus(500)
+       }
+       
    } ,
    register: async (req,res) => {
        const db = req.app.get('db')
