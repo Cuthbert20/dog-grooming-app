@@ -17,7 +17,12 @@ export default class Login extends Component{
         const { login_name, password } =  this.state
         axios.post('/auth/login', {login_name, password})
         .then(res => {
-            console.log(res.data)
+            this.setState({
+                //should I reset state of login_name to ''
+                login_name: res.data.login_name,
+                password: ''
+            })
+            console.log(this.state)
         })
     }
     render(){
@@ -25,8 +30,8 @@ export default class Login extends Component{
         return(
             <div>
                 <input onChange={e => this.handleChange(e, 'login_name')} value={login_name} placeholder="login Name" type="text"/>
-                <input onChange={e => this.handleChange(e, 'password')} value={password} placeholder='password' type="text"/>
-                <Button size='sm' variant="outline-info" onClick={this.login} >Click Me</Button>
+                <input onChange={e => this.handleChange(e, 'password')} value={password} placeholder='password' type="password"/>
+                <Button size='md' variant="outline-info" onClick={this.login} >Click Me</Button>
             </div>
         )
     }
