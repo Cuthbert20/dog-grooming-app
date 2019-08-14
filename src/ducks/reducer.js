@@ -20,14 +20,36 @@ const initalState = {
 }
 
 //ACTION TYPES ie consts
+const SET_USER = 'SET_USER'
+const USER_LOGOUT = 'USER_LOGOUT'
 
 //ACTION BUILDERS
-
+export function setUser(user){
+    return{
+        type: SET_USER,
+        payload: user
+    }
+}
+export function userLogout(user){
+    return{
+        type: USER_LOGOUT,
+        payload: user
+    }
+}
 
 //REDUCER
 export default (state = initalState, action) => {
-    const {type, payload} = action
+    console.log(action)
+    const { type } = action
     switch(type){
+        case USER_LOGOUT:
+            return initalState
+        case SET_USER:
+            const { login_name, email } = action.payload
+            //making copy of state with spread operator
+            //then we are reassigning the values of login_name & email 
+            //to what comes off of the action.payload
+            return{...state, login_name, email}
         default:
             return state
     }

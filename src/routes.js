@@ -14,10 +14,10 @@ import UserList from '../src/components/UserList/UserList'
 export default (
     <Switch>
         <Route exact path='/' component={Main} />
+        <Route exact path='/dashboard' component={UserDash} />
         <Route path='/contact' component={Contact} />
         <Route path='/register' component={Register} />
         <Route path='/login' component={Login} />
-        <Route path='/dashboard' component={UserDash} />
         <Route path='/setupapp' component={SetupApp} />
         <Route path='/userlist' component={UserList} />
         <Route path='/setupapp/booking' component={Booking} />

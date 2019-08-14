@@ -57,5 +57,13 @@ module.exports = {
            res.status(201).send(req.session.user)
        }
        
+   },
+   logout: (req,res) => {
+       //destory is a function that lives on req.session, session is so cool.
+       req.session.destroy()
+        // console.log(req.session)
+       res.status(200).send({message: 'logged out'})
+    //    res.redirect('/')
+
    }
 }
