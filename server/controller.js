@@ -22,9 +22,11 @@ module.exports = {
             //the value on the left is what we will reference when we access the data on the front end.
             //the name on the left side is what the front end will see when refering to the key value pair ie obj
             user_id: user.user_id,
-                email: user.email,
-                login_name: user.login_name,  
-                admin_user: user.admin_user
+            email: user.email,
+            login_name: user.login_name,  
+            admin_user: user.admin_user,
+            username: user.username,
+            phone: user.phone
         }
         console.log(req.session)
        res.status(200).send(req.session.user)
@@ -56,7 +58,9 @@ module.exports = {
                 user_id: user.user_id,
                 email: user.email,
                 login_name: user.login_name,  
-                admin_user: user.admin_user
+                admin_user: user.admin_user,
+                phone: user.phone,
+                username: user.username
 
            }
            console.log(req.session.user)
@@ -71,5 +75,17 @@ module.exports = {
        res.status(200).send({message: 'logged out'})
     //    res.redirect('/')
 
+   },
+   update: async (req, res) => {
+       console.log(req.session.user)
+       const { username, phone, dog_name, dog_breed } = req.body
+       //getting user_id from req.session
+       const { user_id } = req.session.user
+       const db = req.app.get('db')
+       let userInfo = await db.update_user({username, phone, dog_name, dog_breed, user_id})
+       //what should live on req.body?
+       //username, phone, user_id, dog_name, dog_breed
+    res.status(200).send(userInfo)
+    
    }
 }

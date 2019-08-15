@@ -20,6 +20,7 @@ app.use(session({
 app.post('/auth/login', ctrl.login)
 app.post('/auth/register', ctrl.register)
 app.delete('/auth/logout', ctrl.logout)
+app.put('/auth/update/:id', ctrl.update)
 
 
 massive(CONNECTION_STRING).then(db => {
