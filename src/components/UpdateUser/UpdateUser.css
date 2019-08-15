@@ -9,3 +9,6 @@ ul {
 li {
     list-style-type: none;
 }
+input {
+    width: 265px;
+}

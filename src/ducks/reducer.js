@@ -23,6 +23,7 @@ const initalState = {
 const SET_USER = 'SET_USER'
 const USER_LOGOUT = 'USER_LOGOUT'
 
+
 //ACTION BUILDERS
 export function setUser(user){
     return{

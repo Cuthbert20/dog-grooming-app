@@ -6,7 +6,10 @@ import axios from 'axios'
 class UpdateUser extends Component{
     state = {
         dogs: [],
-        dog_breed: ''
+        dog_breed: '',
+        dog_name: '',
+        username: '',
+        phone: ''
     }
     componentDidMount(){
         //getting the dog api
@@ -23,9 +26,15 @@ class UpdateUser extends Component{
         this.setState({dog_breed: dog.target.value})
         // console.log('dog', dog)
     }
+    inputChange(e, key){
+        this.setState({
+            [key]: e.target.value
+        })
+    }
     render(){
-        const { dogs, dog_breed } = this.state
-        console.log('dog breed', dog_breed)
+        const { dogs, dog_breed, dog_name, username, phone } = this.state
+        // console.log('dog breed', dog_breed)
+        console.log('state', this.state)
         return(
             <div>
                 <ul>
@@ -39,10 +48,9 @@ class UpdateUser extends Component{
 
                     })}
                     </select>
-                    <li><input type="text"/></li>
-                    <li><input type="text"/></li>
-                    <li><input type="text"/></li>
-                    <li><input type="text"/></li>
+                    <li><input onChange={e => this.inputChange(e, "dog_name")} value={dog_name} placeholder='Dog Name' type="text"/></li>
+                    <li><input onChange={e => this.inputChange(e, "username")} value={username} placeholder='Ower Name' type="text"/></li>
+                    <li><input onChange={e => this.inputChange(e, "phone")} value={phone} placeholder='Phone Number' type="text"/></li>
                     <button>Submit</button>
                 </ul>
             </div>
@@ -50,8 +58,12 @@ class UpdateUser extends Component{
     }
 }
 function mapStateToProps(reduxState){
+    // const { dog_breed, phone, dog_name, username } = reduxState
     return {
-        reduxState
+        // dog_breed,
+        // phone,
+        // dog_name,
+        // username
     }
 }
 

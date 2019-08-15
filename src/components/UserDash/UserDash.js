@@ -7,7 +7,7 @@ export default class UserDash extends Component {
         render: false
     }
     handleClick = () => {
-        const { render } = this.state
+        // const { render } = this.state
         this.setState({
             render: !this.state.render
         })
