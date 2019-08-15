@@ -61,12 +61,9 @@ class UpdateUser extends Component{
     }
 }
 function mapStateToProps(reduxState){
-    // const { dog_breed, phone, dog_name, username } = reduxState
+    const { dog_ids } = reduxState
     return {
-        // dog_breed,
-        // phone,
-        // dog_name,
-        // username
+        dog_ids
     }
 }
 

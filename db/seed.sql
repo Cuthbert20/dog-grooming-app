@@ -58,4 +58,8 @@ SET dog_name = 'Stark',
 dog_breed = 'bully'
 WHERE
     user_id = 5;
---selecting all from dogs and user using order by to order user table
+--getting all dogs that belong to particular user id
+SELECT d.dog_id FROM dogs d
+INNER JOIN users u ON u.user_id = d.user_id
+WHERE
+d.user_id = 11;

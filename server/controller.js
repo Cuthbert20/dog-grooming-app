@@ -8,6 +8,8 @@ module.exports = {
        const foundUser = await db.user_login([login_name])
        //here we are putting user on session. We can now access the whole user object on front end.
         const user = foundUser[0]
+        const dog_id = await db.login_dog_data([user.user_id])
+        console.log("dog id",dog_id)
         //if user doesn't exist we will send a status 401 error code
         if(!user){
             return res.status(401).send('User not found, please register')
@@ -26,9 +28,10 @@ module.exports = {
             login_name: user.login_name,  
             admin_user: user.admin_user,
             username: user.username,
-            phone: user.phone
+            phone: user.phone,
+            dog_id: dog_id
         }
-        console.log(req.session)
+        console.log(req.session.user)
        res.status(200).send(req.session.user)
        }
        catch(error){

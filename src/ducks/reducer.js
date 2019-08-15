@@ -16,7 +16,8 @@ const initalState = {
     addon_name: '',
     addon_price: '',
     date: '',
-    time: ''
+    time: '',
+    dog_ids: []
 }
 
 //ACTION TYPES ie consts
@@ -46,11 +47,11 @@ export default (state = initalState, action) => {
         case USER_LOGOUT:
             return initalState
         case SET_USER:
-            const { login_name, email } = action.payload
+            const { login_name, email, dog_id } = action.payload
             //making copy of state with spread operator
             //then we are reassigning the values of login_name & email 
             //to what comes off of the action.payload
-            return{...state, login_name, email}
+            return{...state, login_name, email, dog_ids: dog_id}
         default:
             return state
     }
