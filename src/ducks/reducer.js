@@ -47,6 +47,7 @@ export default (state = initalState, action) => {
         case USER_LOGOUT:
             return initalState
         case SET_USER:
+            //getting/destructuring login_name, email, & dog_id off of action.payload
             const { login_name, email, dog_id } = action.payload
             //making copy of state with spread operator
             //then we are reassigning the values of login_name & email 
