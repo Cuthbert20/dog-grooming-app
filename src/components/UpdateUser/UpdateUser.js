@@ -4,31 +4,21 @@ import './UpdateUser.css'
 
 class UpdateUser extends Component{
     state = {
-        render: false
+        dogs: []
     }
-    handleClick = () => {
-        const { render } = this.state
-        if(render){
-            this.setState({
-                render: false
-            })
-        }
-        else{
-            this.setState({
-                render: true
-            })
-        }
+    componentDidMount(){
         
     }
     render(){
         return(
             <div>
                 <ul>
-                    <li><button onClick={this.handleClick} >Click to Update</button></li>
+                    
                     <li><input type="text"/></li>
                     <li><input type="text"/></li>
                     <li><input type="text"/></li>
                     <li><input type="text"/></li>
+                    <button>Submit</button>
                 </ul>
             </div>
         )
