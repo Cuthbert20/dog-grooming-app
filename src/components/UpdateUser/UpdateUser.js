@@ -5,7 +5,8 @@ import axios from 'axios'
 
 class UpdateUser extends Component{
     state = {
-        dogs: []
+        dogs: [],
+        dog_breed: ''
     }
     componentDidMount(){
         //getting the dog api
@@ -18,16 +19,26 @@ class UpdateUser extends Component{
             this.setState({dogs: res.data})
         })
     }
+    handleChange = dog => {
+        this.setState({dog_breed: dog.target.value})
+        // console.log('dog', dog)
+    }
     render(){
-        const { dogs } = this.state
-        console.log('dog', dogs)
+        const { dogs, dog_breed } = this.state
+        console.log('dog breed', dog_breed)
         return(
             <div>
                 <ul>
-                    {/* .fitler  */}
+                    {/* .fitler first then map because  */}
+                    <select value={dog_breed} onChange={e => this.handleChange(e)} name="" id="">
+                        <option value="">Select Dog Breed</option>
                     {dogs.map((elm) => {
-                        return <li key={elm.id} >{elm.name}</li>
+                        return (
+                            <option key={elm.id} value={elm.name}>{elm.name}</option> 
+                                )
+
                     })}
+                    </select>
                     <li><input type="text"/></li>
                     <li><input type="text"/></li>
                     <li><input type="text"/></li>
