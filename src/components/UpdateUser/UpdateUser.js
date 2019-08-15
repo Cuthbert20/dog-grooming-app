@@ -31,6 +31,9 @@ class UpdateUser extends Component{
             [key]: e.target.value
         })
     }
+    buttonChange(body){
+        axios.put(`/auth/update`,body)
+    }
     render(){
         const { dogs, dog_breed, dog_name, username, phone } = this.state
         // console.log('dog breed', dog_breed)
@@ -51,7 +54,7 @@ class UpdateUser extends Component{
                     <li><input onChange={e => this.inputChange(e, "dog_name")} value={dog_name} placeholder='Dog Name' type="text"/></li>
                     <li><input onChange={e => this.inputChange(e, "username")} value={username} placeholder='Ower Name' type="text"/></li>
                     <li><input onChange={e => this.inputChange(e, "phone")} value={phone} placeholder='Phone Number' type="text"/></li>
-                    <button>Submit</button>
+                    <button onClick={this.buttonChange()}>Submit</button>
                 </ul>
             </div>
         )

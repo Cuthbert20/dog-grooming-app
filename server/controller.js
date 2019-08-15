@@ -13,7 +13,7 @@ module.exports = {
             return res.status(401).send('User not found, please register')
         }
         //creating a const using bcrypt.compareSync takes in 2 params password, user.hash
-        console.log(user)
+        // console.log(user)
         const isAuthenticated = bcrypt.compareSync(password, user.password)//refers to hashed password from registration that lives on the user obj on database.
         if(!isAuthenticated){
             res.status(403).send('Wrong PassWord')
