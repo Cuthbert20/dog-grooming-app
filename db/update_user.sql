@@ -9,4 +9,6 @@ SET dog_name = ${dog_name},
 dog_breed = ${dog_breed}
 WHERE
     user_id = ${user_id}
+AND
+    dog_id = ${dog_id}
     returning *;

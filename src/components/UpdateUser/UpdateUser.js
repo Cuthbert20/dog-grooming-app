@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import './UpdateUser.css'
 import axios from 'axios'
 
+//right now this COMPONENT IS FOR REFERENCE for other components
 class UpdateUser extends Component{
     state = {
         dogs: [],
@@ -35,7 +36,7 @@ class UpdateUser extends Component{
         axios.put(`/auth/update`,body)
     }
     render(){
-        console.log(this.props)
+        // console.log(this.props)
         const { dogs, dog_breed, dog_name, username, phone } = this.state
         // console.log('dog breed', dog_breed)
         // console.log('state', this.state)
@@ -53,6 +54,7 @@ class UpdateUser extends Component{
                     })}
                     </select>
                     <select name="" id="">
+                    {/* name="" id="" */}
                         {this.props.dog_ids.map(elm => {
                             return (
                                 <option key={elm.dog_id} value={elm.dog_name}>{elm.dog_name}</option>

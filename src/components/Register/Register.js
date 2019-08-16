@@ -20,7 +20,7 @@ class Register extends Component{
         //destructuring and assigning values = yes
         var { loginInput: login_name, emailInput: email, passwordInput: password } = this.state
         let res = await axios.post('/auth/register', {email, password, login_name})
-        console.log(res)
+        console.log(res.data)
         // var { login_name, email } = res.data
         this.props.setUser(res.data)
     }
@@ -36,6 +36,12 @@ class Register extends Component{
                 <Link to='/dashboard' ><button onClick={this.registerUser} >Submit</button></Link>
             </div>
         )
+    }
+}
+function mapStateToProps(reduxState){
+    const { user_id } = reduxState
+    return{
+        user_id
     }
 }
 

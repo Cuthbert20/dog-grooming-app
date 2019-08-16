@@ -81,14 +81,19 @@ module.exports = {
    },
    update: async (req, res) => {
        console.log(req.session.user)
-       const { username, phone, dog_name, dog_breed } = req.body
+       const { username, phone, dog_name, dog_breed, dog_id } = req.body
        //getting user_id from req.session
        const { user_id } = req.session.user
        const db = req.app.get('db')
-       let userInfo = await db.update_user({username, phone, dog_name, dog_breed, user_id})
+       let userInfo = await db.update_user({username, phone, dog_name, dog_breed, user_id, dog_id})
        //what should live on req.body?
        //username, phone, user_id, dog_name, dog_breed
     res.status(200).send(userInfo)
     
+   },
+   userInfo: async (req,res) => {
+       const { username, phone } = req.body
+       const db = req.app.get('db')
+       
    }
 }

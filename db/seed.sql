@@ -63,3 +63,10 @@ SELECT d.dog_id FROM dogs d
 INNER JOIN users u ON u.user_id = d.user_id
 WHERE
 d.user_id = 11;
+
+--updating phone and username from null to have a value
+UPDATE users
+SET username = 'Bob',
+phone = '123-123-1234'
+WHERE
+user_id = 14;
