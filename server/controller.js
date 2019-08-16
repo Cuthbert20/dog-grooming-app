@@ -92,8 +92,11 @@ module.exports = {
     
    },
    userInfo: async (req,res) => {
+       console.log(req.body)
        const { username, phone } = req.body
+       const { user_id } = req.session.user
        const db = req.app.get('db')
-       
+       const userUpdate = await db.user_add_info({username, phone, user_id})
+    res.status(200).send(userUpdate)
    }
 }

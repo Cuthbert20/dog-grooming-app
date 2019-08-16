@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import axios from 'axios'
 
 export default class AddUserInfo extends Component {
     state = {
@@ -10,6 +11,11 @@ export default class AddUserInfo extends Component {
             [key]: e.target.value
         })
     }
+    handleClick = () => {
+        console.log('hit',this.state)
+        const {username, phone} = this.state
+        axios.put(`/auth/userinfo`, {username, phone})
+    }
     render() {
         console.log(this.state)
         return (
@@ -18,7 +24,7 @@ export default class AddUserInfo extends Component {
                 <br/>
                 <input onChange={e => this.handleChange(e, 'username')} placeholder='Your Name' type="text"/>
                 <input onChange={e => this.handleChange(e, 'phone')} placeholder="Phone Number" type="text"/>
-                <button>Submit</button>
+                <button onClick={() => this.handleClick()} >Submit</button>
             </div>
         )
     }
