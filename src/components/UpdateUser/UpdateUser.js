@@ -9,8 +9,8 @@ class UpdateUser extends Component{
         dogs: [],
         dog_breed: '',
         dog_name: '',
-        username: '',
-        phone: ''
+        // username: '',
+        // phone: ''
     }
     componentDidMount(){
         //getting the dog api
@@ -32,12 +32,19 @@ class UpdateUser extends Component{
             [key]: e.target.value
         })
     }
+    buttonClick = () => {
+        const { dog_breed, dog_name } = this.state
+        axios.post(`/auth/adddog`, {dog_breed, dog_name})
+        .then(res => {
+            alert(`your doggy has been added`)
+        })
+    }
     // buttonChange(body){
     //     axios.put(`/auth/update`,body)
     // }
     render(){
         // console.log(this.props)
-        const { dogs, dog_breed, dog_name, username, phone } = this.state
+        const { dogs, dog_breed, dog_name, } = this.state
         // console.log('dog breed', dog_breed)
         // console.log('state', this.state)
         return(
@@ -57,7 +64,7 @@ class UpdateUser extends Component{
                     {/* <li><input onChange={e => this.inputChange(e, "username")} value={username} placeholder='Ower Name' type="text"/></li>
                     <li><input onChange={e => this.inputChange(e, "phone")} value={phone} placeholder='Phone Number' type="text"/></li> */}
                     {/* <button onClick={() => this.buttonChange()}>Submit</button> */}
-                    <button>Upload Dog</button>
+                    <button onClick={() => this.buttonClick()} >Upload Dog</button>
                 </ul>
             </div>
         )
