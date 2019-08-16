@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import './UpdateUser.css'
 import axios from 'axios'
 
-//right now this COMPONENT IS FOR REFERENCE for other components
+//this COMPONENT will be for adding a dog to the data base
 class UpdateUser extends Component{
     state = {
         dogs: [],
@@ -32,9 +32,9 @@ class UpdateUser extends Component{
             [key]: e.target.value
         })
     }
-    buttonChange(body){
-        axios.put(`/auth/update`,body)
-    }
+    // buttonChange(body){
+    //     axios.put(`/auth/update`,body)
+    // }
     render(){
         // console.log(this.props)
         const { dogs, dog_breed, dog_name, username, phone } = this.state
@@ -43,7 +43,6 @@ class UpdateUser extends Component{
         return(
             <div>
                 <ul>
-                    {/* .fitler first then map because  */}
                     <select value={dog_breed} onChange={e => this.handleChange(e)} name="" id="">
                         <option value="">Select Dog Breed</option>
                     {dogs.map((elm) => {
@@ -53,18 +52,12 @@ class UpdateUser extends Component{
 
                     })}
                     </select>
-                    <select name="" id="">
-                    {/* name="" id="" */}
-                        {this.props.dog_ids.map(elm => {
-                            return (
-                                <option key={elm.dog_id} value={elm.dog_name}>{elm.dog_name}</option>
-                            )
-                        })}
-                    </select>
+                    
                     <li><input onChange={e => this.inputChange(e, "dog_name")} value={dog_name} placeholder='Dog Name' type="text"/></li>
-                    <li><input onChange={e => this.inputChange(e, "username")} value={username} placeholder='Ower Name' type="text"/></li>
-                    <li><input onChange={e => this.inputChange(e, "phone")} value={phone} placeholder='Phone Number' type="text"/></li>
-                    <button onClick={() => this.buttonChange()}>Submit</button>
+                    {/* <li><input onChange={e => this.inputChange(e, "username")} value={username} placeholder='Ower Name' type="text"/></li>
+                    <li><input onChange={e => this.inputChange(e, "phone")} value={phone} placeholder='Phone Number' type="text"/></li> */}
+                    {/* <button onClick={() => this.buttonChange()}>Submit</button> */}
+                    <button>Upload Dog</button>
                 </ul>
             </div>
         )

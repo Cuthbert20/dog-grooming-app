@@ -22,6 +22,7 @@ app.post('/auth/register', ctrl.register)
 app.delete('/auth/logout', ctrl.logout)
 app.put('/auth/update', ctrl.update)
 app.put('/auth/userinfo', ctrl.userInfo)
+app.post('/auth/adddog', ctrl.addDog)
 
 
 massive(CONNECTION_STRING).then(db => {

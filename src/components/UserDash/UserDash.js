@@ -24,7 +24,7 @@ export default class UserDash extends Component {
             <div>
                 User Dashboard
                 <Link to='/setupapp' ><button>Set Up Appointment</button></Link>
-                <button onClick={this.handleClick} >Update Your Info</button>
+                <button onClick={this.handleClick} >Add your dogs Info</button>
                 {this.state.render ? <UpdateUser /> : null}
                 <button onClick={this.userClick} >Add Your Info</button>
                 {this.state.userRender ? <AddUserInfo /> : null}

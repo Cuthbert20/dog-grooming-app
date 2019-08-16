@@ -15,9 +15,13 @@ export default class AddUserInfo extends Component {
         console.log('hit',this.state)
         const {username, phone} = this.state
         axios.put(`/auth/userinfo`, {username, phone})
+        .then(res => {
+            console.log(res.data[0].login_name)
+            alert(`${res.data[0].login_name} has been updated`)
+        })
     }
     render() {
-        console.log(this.state)
+        // console.log(this.state)
         return (
             <div>
                 Add Your Information

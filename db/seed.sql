@@ -70,3 +70,8 @@ SET username = 'Bob',
 phone = '123-123-1234'
 WHERE
 user_id = 14;
+
+--adding values to the dog table 
+INSERT INTO dogs(dog_name, dog_breed, user_id)
+VALUES
+('BeBe', 'alpacka', 11);

@@ -92,11 +92,18 @@ module.exports = {
     
    },
    userInfo: async (req,res) => {
-       console.log(req.body)
+    //    console.log(req.body)
        const { username, phone } = req.body
        const { user_id } = req.session.user
        const db = req.app.get('db')
        const userUpdate = await db.user_add_info({username, phone, user_id})
     res.status(200).send(userUpdate)
+   },
+   addDog: async (req,res) => {
+       const db = req.app.get('db')
+       const { user_id } = req.session.user
+       const { dog_name, dog_breed } = req.body
+       const newDog = await db.add_dog({dog_name, dog_breed, user_id})
+       res.status(200).send(newDog)
    }
 }
