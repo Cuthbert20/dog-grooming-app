@@ -75,3 +75,19 @@ user_id = 14;
 INSERT INTO dogs(dog_name, dog_breed, user_id)
 VALUES
 ('BeBe', 'alpacka', 11);
+
+--created service table
+CREATE TABLE services(
+service_id SERIAL PRIMARY KEY,
+service_name VARCHAR(50),
+service_info VARCHAR(500),
+service_price VARCHAR(20),
+dog_id INT REFERENCES dogs(dog_id)
+)
+
+--INSERTing dummy value INTO services TABLE
+INSERT INTO services(service_name, service_info, service_price)
+VALUES
+('Shampoo & Wash', 'Full Wash with best shampoo ever', '$10'),
+('jump & swing', 'just like it sounds', '$90'),
+('walk', 'going for a nice long walk', '$10')

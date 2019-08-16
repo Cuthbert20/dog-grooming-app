@@ -35,7 +35,7 @@ class UpdateUser extends Component{
     buttonClick = () => {
         const { dog_breed, dog_name } = this.state
         axios.post(`/auth/adddog`, {dog_breed, dog_name})
-        .then(res => {
+        .then(() => {
             alert(`your doggy has been added`)
         })
     }
