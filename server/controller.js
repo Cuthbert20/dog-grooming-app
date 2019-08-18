@@ -105,5 +105,11 @@ module.exports = {
        const { dog_name, dog_breed } = req.body
        const newDog = await db.add_dog({dog_name, dog_breed, user_id})
        res.status(200).send(newDog)
+   },
+   services: async (req,res) => {
+       const db = req.app.get('db')
+       const result = await db.get_all_services()
+    //    console.log(result)
+       res.status(200).send(result)
    }
 }

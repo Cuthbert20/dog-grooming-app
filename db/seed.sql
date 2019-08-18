@@ -81,8 +81,7 @@ CREATE TABLE services(
 service_id SERIAL PRIMARY KEY,
 service_name VARCHAR(50),
 service_info VARCHAR(500),
-service_price VARCHAR(20),
-dog_id INT REFERENCES dogs(dog_id)
+service_price VARCHAR(20)
 )
 
 --INSERTing dummy value INTO services TABLE

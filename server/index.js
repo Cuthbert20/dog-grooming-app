@@ -16,6 +16,8 @@ app.use(session({
         maxAge: 1000 * 60 * 60 * 7
     }
 }))
+app.use("/static", express.static("./media"))
+
 //end points
 app.post('/auth/login', ctrl.login)
 app.post('/auth/register', ctrl.register)
@@ -23,6 +25,7 @@ app.delete('/auth/logout', ctrl.logout)
 app.put('/auth/update', ctrl.update)
 app.put('/auth/userinfo', ctrl.userInfo)
 app.post('/auth/adddog', ctrl.addDog)
+app.get('/dog/services', ctrl.services)
 
 
 massive(CONNECTION_STRING).then(db => {

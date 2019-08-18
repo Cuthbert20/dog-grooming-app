@@ -6,6 +6,25 @@ import {userLogout} from '../../ducks/reducer'
 import {withRouter} from 'react-router-dom'
 import axios from 'axios'
 import Button from 'react-bootstrap/Button';
+import styled from 'styled-components'
+
+const NavWrapper = styled.div `
+    /* outline: 5px solid white; */
+    min-height: 32px;
+`
+const StyledNav = styled.div `
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+
+    &:hover{
+        background-color: purple;
+    }
+
+    &:focus{
+        /*  */
+    }
+`;
 
 class Nav extends Component{
     
@@ -20,11 +39,13 @@ class Nav extends Component{
         //withRouter is what is giving me access to match, location, and history from this.props
         // const { match, location, history } = this.props;
         return(
-            <div >
+            <NavWrapper>
+            <StyledNav >
                 {this.props.login_name ? <> <span>How you doin, {this.props.login_name}</span>
                 <Link to='/dashboard'><Button size='sm' variant="outline-danger">Home</Button></Link> <Button size='sm' variant="outline-primary" onClick={this.logout} >Logout</Button> </> : null}
                 
-            </div>
+            </StyledNav>
+            </NavWrapper>
         )
     }
 }

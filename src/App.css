@@ -1,11 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Cinzel&display=swap');
+
 .App {
   text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+  background-color: hotpink;
+  /* background-image: linear-gradient(to right, black , gray); Standard syntax (must be last) */
+  height: 100vh;
+  width: 100vw;
+  font-family: 'Cinzel', serif;
 }
 
 .App-header {

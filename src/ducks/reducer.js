@@ -12,12 +12,7 @@ const initalState = {
     service_id: '',
     service_name: "",
     service_price: '',
-    addon_id: '',
-    addon_name: '',
-    addon_price: '',
-    date: '',
-    time: '',
-    dog_ids: []
+    dog_ids: [],
 }
 
 //ACTION TYPES ie consts
@@ -38,6 +33,7 @@ export function userLogout(user){
         payload: user
     }
 }
+
 
 //REDUCER
 export default (state = initalState, action) => {
