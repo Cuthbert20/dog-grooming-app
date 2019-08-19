@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import UpdateUser from '.././UpdateUser/UpdateUser'
 import AddUserInfo from '.././AddUserInfo/AddUserInfo'
 import { PinkButton } from '../../style'
+import './UserDash.css'
 
 export default class UserDash extends Component {
     state = {
@@ -23,7 +24,8 @@ export default class UserDash extends Component {
     render() {
         return (
             <div>
-                User Dashboard
+                <span>User Dashboard</span>    
+                <i class="fad fa-cut sissors"></i>
                 <hr/>
                 <Link to='/setupapp' ><PinkButton>Set Up Appointment</PinkButton></Link>
                 <hr/>
