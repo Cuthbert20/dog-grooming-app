@@ -25,9 +25,9 @@ class ServicesComp extends Component {
     // console.log(this.state.services)
     const { services } = this.state;
     const allServices = services.map(val => {
-      console.log("val", val);
+      // console.log("val", val);
       return (
-        <ServicesContainer>
+        <ServicesContainer key={val.service_id}>
           <ServicesHeader>
             <ServiceTitle>{val.service_name}</ServiceTitle>
             <ServicePrice>{val.service_price}</ServicePrice>

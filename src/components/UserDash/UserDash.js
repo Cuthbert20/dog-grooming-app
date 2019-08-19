@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import UpdateUser from '.././UpdateUser/UpdateUser'
 import AddUserInfo from '.././AddUserInfo/AddUserInfo'
+import { PinkButton } from '../../style'
 
 export default class UserDash extends Component {
     state = {
@@ -23,11 +24,16 @@ export default class UserDash extends Component {
         return (
             <div>
                 User Dashboard
-                <Link to='/setupapp' ><button>Set Up Appointment</button></Link>
-                <button onClick={this.handleClick} >Add your dogs Info</button>
+                <hr/>
+                <Link to='/setupapp' ><PinkButton>Set Up Appointment</PinkButton></Link>
+                <hr/>
+                <PinkButton onClick={this.handleClick} >Add your dogs Info</PinkButton>
+                <hr/>
                 {this.state.render ? <UpdateUser /> : null}
-                <button onClick={this.userClick} >Add Your Info</button>
+                <PinkButton onClick={this.userClick} >Add Your Info</PinkButton>
+                <hr/>
                 {this.state.userRender ? <AddUserInfo /> : null}
+
                 
             </div>
         )
