@@ -41,6 +41,9 @@ class Nav extends Component{
         // const { match, location, history } = this.props;
         return(
             <NavWrapper>
+                <div>
+                    {/* <img src="http://localhost:4001/static/logotrans.png" alt="logo" className="logo"/> */}
+                </div>
             <StyledNav >
                 {this.props.login_name ? <> <span>How you doin, {this.props.login_name}</span>
                 <Link to='/dashboard'><Button size='sm' variant="outline-danger">Home</Button></Link> <Button size='sm' variant="outline-primary" onClick={this.logout} >Logout</Button> </> : null}

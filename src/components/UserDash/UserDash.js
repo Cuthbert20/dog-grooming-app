@@ -25,7 +25,7 @@ export default class UserDash extends Component {
         return (
             <div>
                 <span>User Dashboard</span>    
-                <i class="fad fa-cut sissors"></i>
+                <i className="fad fa-cut sissors"></i>
                 <hr/>
                 <Link to='/setupapp' ><PinkButton>Set Up Appointment</PinkButton></Link>
                 <hr/>

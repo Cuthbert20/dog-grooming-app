@@ -117,3 +117,7 @@ VALUES
 (11, 2, 8, '10am', '2049-11-25'),
 (9, 3, 7, '11am', '2020-10-19'),
 (11, 1, 14, '9am', '2019-06-09')
+
+--selecting all dogs based on user_id
+SELECT * FROM dogs
+WHERE user_id = 11;
