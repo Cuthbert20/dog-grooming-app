@@ -105,3 +105,24 @@ export const LogoImg = styled.img `
     max-width: 20%;
     max-height: 50%;
 `;
+
+// setupapp
+
+export const TimeOption = styled.option `
+    height: 99px;
+    padding: 100px;
+
+`
+
+export const TimeSelect = styled.select `
+    height: auto;
+    padding: 4px;
+    border-radius: 5px;
+    background: none;
+    margin-left: 20px;
+`
+
+export const BookingForm = styled.form `
+    display: flex;
+    justify-content: flex-start;
+`

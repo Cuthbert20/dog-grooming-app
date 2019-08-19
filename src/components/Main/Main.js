@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
 import ServicesComp from '../ServicesComp/ServicesComp'
-import { MainDisplay, MainContainer, MainHeader, PinkButton, LogoImg } from '../../style'
+import { MainDisplay, MainContainer, MainHeader, PinkButton } from '../../style'
 
 export default class Main extends Component{
     onScrolling = (e) => {

@@ -30,6 +30,7 @@ class Nav extends Component{
     
     logout = async () => {
         let res = await axios.delete(`/auth/logout`)
+        console.log(res)
         this.props.userLogout()
         this.props.history.push('/')
     }

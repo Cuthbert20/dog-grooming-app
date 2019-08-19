@@ -90,3 +90,30 @@ VALUES
 ('Shampoo & Wash', 'Full Wash with best shampoo ever', '$10'),
 ('jump & swing', 'just like it sounds', '$90'),
 ('walk', 'going for a nice long walk', '$10')
+
+--CREATING A BOOKING TABLE
+CREATE TABLE booking (
+book_id SERIAL PRIMARY KEY,
+user_id INT REFERENCES users(user_id),
+service_id INT REFERENCES services(service_id),
+dog_id INT REFERENCES dogs(dog_id),
+book_time TIME NOT NULL,
+book_date DATE NOT NULL
+)
+
+--BOOKING TABLE date workaround
+CREATE TABLE booking (
+book_id SERIAL PRIMARY KEY,
+user_id INT REFERENCES users(user_id),
+service_id INT REFERENCES services(service_id),
+dog_id INT REFERENCES dogs(dog_id),
+book_time VARCHAR(10),
+book_date DATE NOT NULL
+)
+
+--INSERTING INTO booking table
+INSERT INTO booking (user_id, service_id, dog_id, book_time, book_date)
+VALUES
+(11, 2, 8, '10am', '2049-11-25'),
+(9, 3, 7, '11am', '2020-10-19'),
+(11, 1, 14, '9am', '2019-06-09')

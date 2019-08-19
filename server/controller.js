@@ -111,5 +111,12 @@ module.exports = {
        const result = await db.get_all_services()
     //    console.log(result)
        res.status(200).send(result)
+   },
+   bookApp: async (req,res) => {
+       const db = req.app.get('db')
+       const { user_id } = req.session.user
+       const { service_id, dog_id, book_time, book_date } = req.body
+       const booking = await db.setup_app({user_id, service_id, dog_id, book_time, book_date})
+       res.status(200).send(booking)
    }
 }

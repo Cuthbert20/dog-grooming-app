@@ -38,11 +38,11 @@ class Register extends Component{
         )
     }
 }
-function mapStateToProps(reduxState){
-    const { user_id } = reduxState
-    return{
-        user_id
-    }
-}
+// function mapStateToProps(reduxState){
+//     const { user_id } = reduxState
+//     return{
+//         user_id
+//     }
+// }
 
 export default connect(null,{setUser})(Register)

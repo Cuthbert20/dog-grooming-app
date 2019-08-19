@@ -1,16 +1,20 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
-import ServicesComp from '../ServicesComp/ServicesComp'
+// import ServicesComp from '../ServicesComp/ServicesComp'
 import { AppointmentContainer } from '../../style'
 import axios from 'axios'
 import { ServicesContainer, ServicesHeader, ServiceTitle,
-    ServicePrice } from '../../style'
+    ServicePrice, TimeSelect, BookingForm} from '../../style'
     import './SetupApp.css'
+
+const times = ['9am', '10am', '11am', '12pm']
 
 class SetupApp extends Component {
     state = {
         services: [],
-        isToggle: true
+        isToggle: true,
+        time: '',
+        date: ''
     }
     componentDidMount(){
         axios.get('/dog/services').then(res => {
@@ -33,9 +37,20 @@ class SetupApp extends Component {
             })
         }
     }
+    inputChange(e, key){
+        console.log('hit')
+        this.setState({
+            [key]: e.target.value
+        })
+    }
+    handleClick = () => {
+        const {date, time} = this.state
+
+
+    }
     render() {
-        // console.log("props on setup appointment",this.props)
-        const { services } = this.state;
+        console.log(this.state)
+        const { services, date, time } = this.state;
         const allServices = services.map(val => {
             return (
                 <ServicesContainer key={val.service_id} >
@@ -64,7 +79,26 @@ class SetupApp extends Component {
                     {allServices}
                     {/* <ServicesComp /> */}
                 </div>
+                <div>
+                    <BookingForm>
+                    <label>
+                        Date:
+                    <input onChange={e => this.inputChange(e, 'date')} value={date} type="date"/>
+                    </label>
+                    <TimeSelect>
+                        <option value="">Select Time</option>
+                        {times.map(e => {
+                            return(
+                                // console.log(e)
+                                <option key={e} value={e}>{e}</option>
+                            )
+                        })}
+                    </TimeSelect>
+                    <button>Submit</button>
+                    </BookingForm>
+                </div>
             </AppointmentContainer>
+            
         )
     }
 }

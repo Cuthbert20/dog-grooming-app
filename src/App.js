@@ -6,9 +6,9 @@ import { withRouter } from 'react-router-dom'
 
 function App(props) {
 
-  const onScroll = (e) => {
-    console.log('scrolling', e)
-}
+//   const onScroll = (e) => {
+//     console.log('scrolling', e)
+// }
   return (
     <div className="App">
      {props.location.pathname === "/" ? <h4>Welcome</h4> : <Nav />}
