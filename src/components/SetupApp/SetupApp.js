@@ -45,7 +45,7 @@ class SetupApp extends Component {
     handleClick = () => {
         const {date, time, service_id, dog_id} = this.state
         console.log(this.state)
-        axios.post(`/dog/booking`, {})
+        axios.post(`/dog/booking`, {book_date: date, book_time: time, service_id, dog_id})
 
     }
     render() {
@@ -85,7 +85,7 @@ class SetupApp extends Component {
                         Date:
                     <input onChange={e => this.inputChange(e, 'date')} value={date} type="date"/>
                     </label>
-                    <TimeSelect>
+                    <TimeSelect onChange={e => this.inputChange(e, 'time')} >
                         <option value="">Select Time</option>
                         {times.map(e => {
                             return(
@@ -94,7 +94,7 @@ class SetupApp extends Component {
                             )
                         })}
                     </TimeSelect>
-                    <select onChange={e => this.inputChange(e, "dog_id")} >
+                    <TimeSelect onChange={e => this.inputChange(e, "dog_id")} >
                         <option>SELECT YOUR DOG</option>
                         {userDogs.map(val => {
                             return(
@@ -103,7 +103,7 @@ class SetupApp extends Component {
                                 </option>
                             )
                         })}
-                    </select>
+                    </TimeSelect>
                     <button onClick={() => this.handleClick()} >Submit</button>
                     </BookingForm>
                     
