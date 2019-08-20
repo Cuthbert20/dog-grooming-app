@@ -4,6 +4,7 @@ import UpdateUser from '.././UpdateUser/UpdateUser'
 import AddUserInfo from '.././AddUserInfo/AddUserInfo'
 import { PinkButton } from '../../style'
 import './UserDash.css'
+import UserInfo from '../UserInfo/UserInfo'
 
 export default class UserDash extends Component {
     state = {
@@ -35,8 +36,7 @@ export default class UserDash extends Component {
                 <PinkButton onClick={this.userClick} >Add Your Info</PinkButton>
                 <hr/>
                 {this.state.userRender ? <AddUserInfo /> : null}
-
-                
+                <UserInfo />
             </div>
         )
     }

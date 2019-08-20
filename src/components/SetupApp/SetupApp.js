@@ -46,6 +46,9 @@ class SetupApp extends Component {
         const {date, time, service_id, dog_id} = this.state
         console.log(this.state)
         axios.post(`/dog/booking`, {book_date: date, book_time: time, service_id, dog_id})
+        .then(() => {
+            alert(`Appointment set for ${date} at ${time}`)
+        })
 
     }
     render() {

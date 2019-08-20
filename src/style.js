@@ -6,6 +6,7 @@ export const ServicesContainer = styled.section `
     color: #f2f2f2;
     margin: 10px 0;
     box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+    padding: 0 10px;
     /* border: 1px pink solid; */
     
     :hover {
@@ -102,7 +103,7 @@ export const PinkButton = styled.button `
 
 export const LogoImg = styled.img `
     border-radius: 5%;
-    max-width: 20%;
+    max-width: 10%;
     max-height: 50%;
 `;
 
