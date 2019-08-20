@@ -36,7 +36,7 @@ export default class UserDash extends Component {
                 <PinkButton onClick={this.userClick} >Add Your Info</PinkButton>
                 <hr/>
                 {this.state.userRender ? <AddUserInfo /> : null}
-                <UserInfo />
+                {/* <UserInfo /> */}
             </div>
         )
     }

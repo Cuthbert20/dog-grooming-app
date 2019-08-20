@@ -1,10 +1,13 @@
 import React, { Component } from 'react'
 import axios from "axios"
+import { UserInfoMain } from '../../style'
 
 
 export default class UserInfo extends Component{
     state = {
-        userDogs: []
+        userDogs: [],
+        dog: ''
+
     }
     componentDidMount(){
         this.getDogs()
@@ -16,22 +19,33 @@ export default class UserInfo extends Component{
             })
         })
     }
-    render(){
-        const { userDogs } = this.state
-        const allUserDogs = userDogs.map(val => {
-            return(
-                <div key={val.dog_id} >
-                    <p><span>{val.dog_name}</span> <span>{val.dog_breed}</span> </p>
-                </div>
-            )
+    handleChange = (e, key) => {
+        this.setState({
+            [key]: e.target.value
         })
+    }
+    render(){
+        const { userDogs, dog } = this.state
+        console.log(dog)
         return(
-            <div>
+            <UserInfoMain>
                 User Info Component
                 <div>
-                    {allUserDogs}
+                    <select value={dog} onChange={e => this.handleChange(e, 'dog')} >
+                        <option value="">See Your Dogs</option>
+                        {userDogs.map(val => {
+                            return (
+                                <option key={val.dog_id} value={val.dog_name} >
+                                    {`${val.dog_name}, BREED: ${val.dog_breed}`}
+                                </option>
+                            )
+                        })}
+                    </select>
                 </div>
-            </div>
+                <div>
+
+                </div>
+            </UserInfoMain>
         )
     }
 }

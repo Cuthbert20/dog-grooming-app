@@ -127,3 +127,16 @@ export const BookingForm = styled.form `
     display: flex;
     justify-content: flex-start;
 `
+
+// creating segmented control with animation for dog list
+//maybe later lol
+
+//UserInfo Component
+
+export const UserInfoMain = styled.main `
+    height: 500px;
+    width: auto;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 30px;
+`;

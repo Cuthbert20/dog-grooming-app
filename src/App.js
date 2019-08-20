@@ -3,6 +3,7 @@ import './App.css';
 import routes from './routes';
 import Nav from '../src/components/Nav/Nav'
 import { withRouter } from 'react-router-dom'
+import UserInfo from './components/UserInfo/UserInfo'
 
 function App(props) {
 
@@ -10,10 +11,13 @@ function App(props) {
 //     console.log('scrolling', e)
 // }
   return (
+    <>
     <div className="App">
      {props.location.pathname === "/" ? <h4>Welcome</h4> : <Nav />}
      {routes}
     </div>
+      {props.location.pathname === "/dashboard" && <UserInfo />}
+    </>
     
   );
 }

@@ -37,7 +37,7 @@ export function userLogout(user){
 
 //REDUCER
 export default (state = initalState, action) => {
-    console.log(action)
+    // console.log(action)
     const { type } = action
     switch(type){
         case USER_LOGOUT:

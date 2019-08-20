@@ -30,13 +30,13 @@ class Nav extends Component{
     
     logout = async () => {
         let res = await axios.delete(`/auth/logout`)
-        console.log(res)
+        // console.log(res)
         this.props.userLogout()
         this.props.history.push('/')
     }
 
     render(){
-        console.log("props on nav ",this.props)
+        // console.log("props on nav ",this.props)
         //withRouter is what is giving me access to match, location, and history from this.props
         // const { match, location, history } = this.props;
         return(
