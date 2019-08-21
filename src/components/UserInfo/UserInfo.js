@@ -35,20 +35,18 @@ export default class UserInfo extends Component{
             [key]: e.target.value
         })
     }
+    backClick = () => {
+        this.props.history.push('/dashboard')
+    }
     render(){
         const { userDogs, dog, services } = this.state
         // console.log(services)
         const allServices = services.map(elm => {
-            console.log(elm)
+            // console.log(elm)
             return (
                 <UserHistory key={elm.book_id} >
-                <i style={{padding: '10px'}} class="fad fa-bone"></i>
-                <li>{elm.dog_name}</li>
-                <li>{elm.dog_breed}</li>
-                <li>{elm.book_time}</li>
-                <li>{elm.book_date}</li>
-                <li>{elm.service_name}</li>
-                <li>{elm.service_price}</li>
+                <i style={{padding: '10px'}} className="fad fa-bone"></i>
+                 <li>{`${elm.dog_name} at ${elm.book_time} on ${elm.book_date} service ${elm.service_name} total ${elm.service_price}`}</li>
                 
                 </UserHistory>
             )
@@ -66,13 +64,15 @@ export default class UserInfo extends Component{
                             )
                         })}
                     </select>
-                </div>
-                
-                <UserHistoryContainer>
-                    <ul>
+                    <button onClick={this.backClick} >Back to Dashboard</button>
+                    <UserHistoryContainer>
+                    <ul  style={{alignItems: 'flex-start'}}>
                         {allServices}
                     </ul>
                 </UserHistoryContainer>
+                </div>
+                
+                
             </UserInfoMain>
         )
     }

@@ -1,0 +1,14 @@
+.scrolled {
+    position: fixed;
+    background-color: rgba(90, 90, 140, 0.9);
+    /* height: 70px; */
+    width: 90vw;
+    /* z-index: 2; */
+    transition: 0.25s;
+    border-radius: 8px;
+    height: 7%;
+}
+
+#welcome {
+    font-weight: bold;
+}

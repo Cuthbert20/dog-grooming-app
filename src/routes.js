@@ -10,6 +10,7 @@ import Register from '../src/components/Register/Register'
 import SetupApp from '../src/components/SetupApp/SetupApp'
 import UserDash from '../src/components/UserDash/UserDash'
 import UserList from '../src/components/UserList/UserList'
+import UserInfo from '../src/components/UserInfo/UserInfo'
 
 export default (
     <Switch>
@@ -22,5 +23,6 @@ export default (
         <Route path='/userlist' component={UserList} />
         <Route path='/setupapp/booking' component={Booking} />
         <Route path='/dashboard/admin' component={AdminDash} />
+        <Route path='/dashboard/history' component={UserInfo} />
     </Switch>
 )

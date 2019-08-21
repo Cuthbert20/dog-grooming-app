@@ -15,7 +15,7 @@ body {
   text-align: center;
   /* background-color: lightblue; */
   /* background-image: linear-gradient(to right, black , gray); Standard syntax (must be last) */
-  height: 95vh;
+  height: 125vh;
   width: 100vw;
   font-family: 'Raleway', sans-serif;
   background-attachment: fixed;
@@ -23,8 +23,8 @@ body {
   background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 30px;
-  clip-path: polygon(0 0, 100% 0, 100% 60vh, 0 100%);
+  padding: 50px;
+  clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
   /* margin: 20px; */
   /* opacity: 0.5; */
   margin: 40px;

@@ -134,17 +134,15 @@ export const BookingForm = styled.form `
 //UserInfo Component
 
 export const UserInfoMain = styled.main `
-    height: 500px;
+    /* height: 100px; */
     width: auto;
     display: flex;
-    justify-content: flex-end;
-    margin-right: 30px;
-    margin-top: 200px;
+    justify-content: flex-start;
 `;
 
 export const UserHistory = styled.article `
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     font-size: 24px;
     margin-top: 20px;
 `;
@@ -178,4 +176,16 @@ export const AddDogContainer = styled.article `
     border-radius: 4px;
     box-shadow: 0 0 5px #666;
     box-sizing: border-box;
+`;
+
+export const DogUpdateList = styled.ul `
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+`;
+
+export const SelectDogDrop = styled.select `
+    padding: 0.7rem 1.2rem 0.7rem 1.2rem;
+    border-radius: 4px;
 `;

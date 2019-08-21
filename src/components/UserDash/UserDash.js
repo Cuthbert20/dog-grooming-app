@@ -21,10 +21,13 @@ export default class UserDash extends Component {
             userRender: !this.state.userRender
         })
     }
+    historyClick = () => {
+        this.props.history.push('/dashboard/history')
+    }
     render() {
         return (
             <div>
-                <span>User Dashboard</span>    
+                <span style={{fontWeight: 'bold'}} >User Dashboard</span>    
                 <i className="fad fa-cut sissors"></i>
                 <hr/>
                 <Link to='/setupapp' ><PinkButton>Set Up Appointment</PinkButton></Link>
@@ -34,7 +37,7 @@ export default class UserDash extends Component {
                 {this.state.render ? <UpdateUser /> : null}
                 <PinkButton onClick={this.userClick} >Add Your Info</PinkButton>
                 <hr/>
-                <PinkButton>Appointment History</PinkButton>
+                <PinkButton onClick={this.historyClick} >Appointment History</PinkButton>
                 <hr/>
                 <PinkButton>Your Dogs</PinkButton>
                 {this.state.userRender ? <AddUserInfo /> : null}

@@ -7,11 +7,12 @@ import {withRouter} from 'react-router-dom'
 import axios from 'axios'
 import Button from 'react-bootstrap/Button';
 import styled from 'styled-components'
+import './Nav.css'
 
 const NavWrapper = styled.div `
     /* outline: 5px solid white; */
     min-height: 32px;
-`
+`;
 const StyledNav = styled.div `
     position: fixed;
     left: 50%;
@@ -27,7 +28,26 @@ const StyledNav = styled.div `
 `;
 
 class Nav extends Component{
-    
+    state= {
+        scrolled: false
+    }
+    componentDidMount(){
+        console.log(window)
+        window.document.addEventListener('scroll', () => {
+            const isTop = window.scrollY < 150;
+            console.log(isTop)
+            if(isTop !== true) {
+                this.setState({
+                   scrolled: true 
+                })
+            }
+            else {
+                this.setState({
+                    scrolled: false
+                })
+            }
+        })
+    }
     logout = async () => {
         let res = await axios.delete(`/auth/logout`)
         console.log(res)
@@ -40,12 +60,13 @@ class Nav extends Component{
         //withRouter is what is giving me access to match, location, and history from this.props
         // const { match, location, history } = this.props;
         return(
-            <NavWrapper>
+            <NavWrapper className={this.state.scrolled && 'scrolled'}>
                 <div>
                     {/* <img src="http://localhost:4001/static/logotrans.png" alt="logo" className="logo"/> */}
                 </div>
             <StyledNav >
-                {this.props.login_name ? <> <span>How you doin, {this.props.login_name}</span>
+                {this.props.login_name ? <> <span id='welcome' >How you doin, {this.props.login_name}</span>
+                <br/>
                 <Link to='/dashboard'><Button size='sm' variant="outline-danger">Home</Button></Link> <Button size='sm' variant="outline-primary" onClick={this.logout} >Logout</Button> </> : null}
                 
             </StyledNav>
