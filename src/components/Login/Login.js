@@ -23,6 +23,7 @@ class Login extends Component{
         // var { login_name, email } = res.data
         // console.log('hit', res.data)
         this.props.setUser(res.data)
+        this.props.history.push('/dashboard')
         // history and match come off of this.props it has access to those values because of our switch on our index.js
         // console.log(this.props, 'hit')
         // .then(res => {
@@ -40,7 +41,7 @@ class Login extends Component{
             <div>
                 <input onChange={e => this.handleChange(e, 'login_name')} value={login_name} placeholder="login Name" type="text"/>
                 <input onChange={e => this.handleChange(e, 'password')} value={password} placeholder='password' type="password"/>
-                <Link to='/dashboard' ><Button size='sm' variant="outline-info" onClick={this.login} >Click Me</Button></Link>
+                <Button size='sm' variant="outline-info" onClick={this.login} >Click Me</Button>
                 <Link to='/' ><Button size='sm' variant="outline-info" >Back</Button></Link>
             </div>
         )

@@ -139,4 +139,43 @@ export const UserInfoMain = styled.main `
     display: flex;
     justify-content: flex-end;
     margin-right: 30px;
+    margin-top: 200px;
+`;
+
+export const UserHistory = styled.article `
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    margin-top: 20px;
+`;
+
+export const AppArticle = styled.article `
+    height: 1500px;
+    width: 100vw;
+    background-attachment: fixed;
+    background-image: linear-gradient(to right bottom, rgba(164, 196, 223, 0.8), rgba(57, 55, 187, 0.8)), url('https://img4.goodfon.com/wallpaper/nbig/c/59/sobaka-drug-priroda-14.jpg');
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 30px;
+    clip-path: polygon(0 28%, 100% 0, 100% 100%, 0% 100%);
+    margin: 30px;
+`;
+
+export const UserHistoryContainer = styled.summary `
+    margin-top: 125px;
+`;
+
+//UpdateUser Component
+export const AddDogContainer = styled.article `
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 420px;
+    margin: 40px auto 0;
+    padding: 7px 0;
+    border-radius: 4px;
+    box-shadow: 0 0 5px #666;
+    box-sizing: border-box;
 `;

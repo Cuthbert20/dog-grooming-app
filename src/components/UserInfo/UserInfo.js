@@ -1,23 +1,34 @@
 import React, { Component } from 'react'
 import axios from "axios"
-import { UserInfoMain } from '../../style'
+import { UserInfoMain, UserHistory, UserHistoryContainer } from '../../style'
 
 
 export default class UserInfo extends Component{
     state = {
         userDogs: [],
-        dog: ''
+        dog: '',
+        services: []
 
     }
     componentDidMount(){
         this.getDogs()
+        this.getServices()
     }
     getDogs = () => {
-        axios.get('dog/userdogs').then(res => {
+        axios.get('/dog/userdogs').then(res => {
             this.setState({
                 userDogs: res.data
             })
         })
+    }
+    getServices = () => {
+            axios.get('/dog/serviced')
+            .then(res => {
+                // console.log(res.data)
+                this.setState({
+                    services: res.data
+                })
+            })
     }
     handleChange = (e, key) => {
         this.setState({
@@ -25,11 +36,25 @@ export default class UserInfo extends Component{
         })
     }
     render(){
-        const { userDogs, dog } = this.state
-        console.log(dog)
+        const { userDogs, dog, services } = this.state
+        // console.log(services)
+        const allServices = services.map(elm => {
+            console.log(elm)
+            return (
+                <UserHistory key={elm.book_id} >
+                <i style={{padding: '10px'}} class="fad fa-bone"></i>
+                <li>{elm.dog_name}</li>
+                <li>{elm.dog_breed}</li>
+                <li>{elm.book_time}</li>
+                <li>{elm.book_date}</li>
+                <li>{elm.service_name}</li>
+                <li>{elm.service_price}</li>
+                
+                </UserHistory>
+            )
+        })
         return(
             <UserInfoMain>
-                User Info Component
                 <div>
                     <select value={dog} onChange={e => this.handleChange(e, 'dog')} >
                         <option value="">See Your Dogs</option>
@@ -42,9 +67,12 @@ export default class UserInfo extends Component{
                         })}
                     </select>
                 </div>
-                <div>
-
-                </div>
+                
+                <UserHistoryContainer>
+                    <ul>
+                        {allServices}
+                    </ul>
+                </UserHistoryContainer>
             </UserInfoMain>
         )
     }

@@ -48,12 +48,13 @@ class SetupApp extends Component {
         axios.post(`/dog/booking`, {book_date: date, book_time: time, service_id, dog_id})
         .then(() => {
             alert(`Appointment set for ${date} at ${time}`)
+            this.props.history.push('/dashboard')
         })
 
     }
     render() {
         // console.log(this.state)
-        const { services, date, userDogs, time, service_id } = this.state;
+        const { services, date, userDogs } = this.state;
         const allServices = services.map(val => {
             return (
                 <ServicesContainer key={val.service_id} >

@@ -9,7 +9,7 @@ module.exports = {
        //here we are putting user on session. We can now access the whole user object on front end.
         const user = foundUser[0]
         const dog_id = await db.login_dog_data([user.user_id])
-        console.log("dog id",dog_id)
+        // console.log("dog id",dog_id)
         //if user doesn't exist we will send a status 401 error code
         if(!user){
             return res.status(401).send('User not found, please register')
@@ -31,7 +31,7 @@ module.exports = {
             phone: user.phone,
             dog_id: dog_id
         }
-        console.log(req.session.user)
+        // console.log(req.session.user)
        res.status(200).send(req.session.user)
        }
        catch(error){
@@ -72,6 +72,7 @@ module.exports = {
        
    },
    logout: (req,res) => {
+       console.log('logout')
        //destory is a function that lives on req.session, session is so cool.
        req.session.destroy()
         // console.log(req.session)
@@ -121,8 +122,16 @@ module.exports = {
    },
    userDogs: async (req,res) => {
        const db = req.app.get('db')
+       console.log('req.session',req.session.user)
        const { user_id } = req.session.user
        const result = await db.get_user_dogs([user_id])
        res.status(200).send(result)
+   },
+   serviceHistory: async (req,res) => {
+       const db = req.app.get('db')
+       console.log('req.session',req.session.user)
+       const { user_id } = req.session.user
+       const services = await db.user_service_history([user_id])
+       res.status(200).send(services)
    }
 }

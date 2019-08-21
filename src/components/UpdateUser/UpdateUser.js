@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import "./UpdateUser.css";
 import axios from "axios";
+import {AddDogContainer  } from '../../style'
 
 //this COMPONENT will be for adding a dog to the data base
 class UpdateUser extends Component {
@@ -67,14 +68,19 @@ class UpdateUser extends Component {
             })}
           </select>
 
+            <AddDogContainer>
           <li>
+          <i class="fad fa-dog "></i>
             <input
+              className='dog-input'
               onChange={e => this.inputChange(e, "dog_name")}
               value={dog_name}
-              placeholder="Dog Name"
+              placeholder="Enter Dog Name"
               type="text"
             />
+            <span onClick={() => this.buttonClick()} ><i class="fad fa-play fa-arrow-right"></i></span>
           </li>
+          </AddDogContainer>
           {/* <li><input onChange={e => this.inputChange(e, "username")} value={username} placeholder='Ower Name' type="text"/></li>
                     <li><input onChange={e => this.inputChange(e, "phone")} value={phone} placeholder='Phone Number' type="text"/></li> */}
           {/* <button onClick={() => this.buttonChange()}>Submit</button> */}

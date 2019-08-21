@@ -28,6 +28,7 @@ app.post('/auth/adddog', ctrl.addDog)
 app.get('/dog/services', ctrl.services)
 app.post('/dog/booking', ctrl.bookApp)
 app.get('/dog/userdogs', ctrl.userDogs)
+app.get('/dog/serviced', ctrl.serviceHistory)
 
 
 massive(CONNECTION_STRING).then(db => {

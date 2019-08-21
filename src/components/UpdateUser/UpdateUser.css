@@ -12,3 +12,23 @@ li {
 input {
     width: 265px;
 }
+i {
+    font-size: 1.5rem;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.dog-input {
+    padding: 10px 0;
+    font-size: 1rem;
+    border: none;
+    outline: none;
+    flex-grow: 3;
+    font-family: inherit;
+    background: transparent;
+    text-align: center;
+}
+
+.fa-arrow-right {
+    cursor: pointer;
+}
