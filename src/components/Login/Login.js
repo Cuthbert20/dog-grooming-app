@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import Button from 'react-bootstrap/Button';
+// import Button from 'react-bootstrap/Button';
 // import InputGroup from 'react-bootstrap/InputGroup'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { setUser } from '../../ducks/reducer'
+import { WhiteBtn } from '../../style'
 
 class Login extends Component{
     state={
@@ -39,10 +40,16 @@ class Login extends Component{
         const { login_name, password } = this.state
         return(
             <div>
+                <div>
+                    <h1>Log In</h1>
+                </div>
                 <input onChange={e => this.handleChange(e, 'login_name')} value={login_name} placeholder="login Name" type="text"/>
+                <br/>
                 <input onChange={e => this.handleChange(e, 'password')} value={password} placeholder='password' type="password"/>
-                <Button size='sm' variant="outline-info" onClick={this.login} >Click Me</Button>
-                <Link to='/' ><Button size='sm' variant="outline-info" >Back</Button></Link>
+                <br/>
+                <WhiteBtn onClick={this.login} >Click Me</WhiteBtn>
+                <br/>
+                <Link to='/' ><button size='sm' variant="outline-info" >Back</button></Link>
             </div>
         )
     }

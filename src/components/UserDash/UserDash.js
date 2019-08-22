@@ -24,6 +24,9 @@ export default class UserDash extends Component {
     historyClick = () => {
         this.props.history.push('/dashboard/history')
     }
+    userDogClick = () => {
+        this.props.history.push('/dashboard/userdog')
+    }
     render() {
         return (
             <div>
@@ -41,7 +44,7 @@ export default class UserDash extends Component {
                 <hr/>
                 <PinkButton onClick={this.historyClick} >Appointment History</PinkButton>
                 <hr/>
-                <PinkButton>Your Dogs</PinkButton>
+                <PinkButton onClick={this.userDogClick} >Your Dogs</PinkButton>
                 
                 {/* <UserInfo /> */}
             </UserDashHeader>

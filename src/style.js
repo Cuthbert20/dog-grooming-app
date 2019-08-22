@@ -122,6 +122,11 @@ export const LogoImg = styled.img `
     max-height: 50%;
 `;
 
+export const WhiteBtn = styled.button `
+    text-transform: uppercase;
+    
+`;
+
 //   App.js styled components
 export const HeadingPrimary = styled.h1 `
     color: #fff;
@@ -252,3 +257,12 @@ export const UserDashHeader = styled.main `
     align-items: center;
     justify-content: space-around;
 `
+// UserDogs Component
+
+export const DogImg = styled.img `
+    height: 125px;
+    width: 125px;
+    object-fit: scale-down;
+    border-radius: 10px;
+    animation: ${FadeIn} 1s linear;
+`;

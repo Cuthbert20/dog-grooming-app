@@ -11,6 +11,7 @@ import SetupApp from '../src/components/SetupApp/SetupApp'
 import UserDash from '../src/components/UserDash/UserDash'
 import UserList from '../src/components/UserList/UserList'
 import UserInfo from '../src/components/UserInfo/UserInfo'
+import UserDogs from '../src/components/UserDogs/UserDogs'
 
 export default (
     <Switch>
@@ -24,5 +25,6 @@ export default (
         <Route path='/setupapp/booking' component={Booking} />
         <Route path='/dashboard/admin' component={AdminDash} />
         <Route path='/dashboard/history' component={UserInfo} />
+        <Route path='/dashboard/userdog' component={UserDogs} />
     </Switch>
 )
