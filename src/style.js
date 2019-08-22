@@ -124,6 +124,31 @@ export const LogoImg = styled.img `
 
 export const WhiteBtn = styled.button `
     text-transform: uppercase;
+    background-color: #fff;
+    color: #777;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 30px 5px 30px 5px;
+    margin: 2px 8px;
+    border: none;
+    transition: all .2s;
+
+    :hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0,0,0,.3);
+    }
+
+    :active {
+        transform: translateY(-1px);
+        box-shadow: 0 5px 9px rgba(0,0,0,.3);
+    }
+    /* hidden psudeo element */
+    /* ::after {
+        content: '';
+        display: inline-block;
+        height: 100px;
+        width: 100px;
+    } */
     
 `;
 
@@ -260,9 +285,23 @@ export const UserDashHeader = styled.main `
 // UserDogs Component
 
 export const DogImg = styled.img `
-    height: 125px;
-    width: 125px;
+    height: 225px;
+    width: 225px;
     object-fit: scale-down;
-    border-radius: 10px;
+    border-radius: 40px 5px 40px 5px;
     animation: ${FadeIn} 1s linear;
+`;
+
+export const DogImgContainer = styled.div `
+    display: flex;
+    align-items: center;
+    justify-content: center;
+`;
+
+export const HeaderOne = styled.h1 `
+    color: white;
+    font-size: 60px;
+    font-weight: 500;
+    letter-spacing: 25px;
+    animation: ${MoveInLeft} 2s linear;
 `;

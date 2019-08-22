@@ -5,7 +5,8 @@ import axios from 'axios'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { setUser } from '../../ducks/reducer'
-import { WhiteBtn } from '../../style'
+import { WhiteBtn, HeaderOne } from '../../style'
+import './Login.css'
 
 class Login extends Component{
     state={
@@ -41,15 +42,15 @@ class Login extends Component{
         return(
             <div>
                 <div>
-                    <h1>Log In</h1>
+                    <HeaderOne>Log In</HeaderOne>
                 </div>
-                <input onChange={e => this.handleChange(e, 'login_name')} value={login_name} placeholder="login Name" type="text"/>
+                <input class='text-input' onChange={e => this.handleChange(e, 'login_name')} value={login_name} placeholder="login Name" type="text"/>
                 <br/>
-                <input onChange={e => this.handleChange(e, 'password')} value={password} placeholder='password' type="password"/>
+                <input class='text-input'  onChange={e => this.handleChange(e, 'password')} value={password} placeholder='password' type="password"/>
                 <br/>
                 <WhiteBtn onClick={this.login} >Click Me</WhiteBtn>
-                <br/>
-                <Link to='/' ><button size='sm' variant="outline-info" >Back</button></Link>
+                {/* <br/> */}
+                <Link to='/' ><WhiteBtn size='sm' variant="outline-info" >Back</WhiteBtn></Link>
             </div>
         )
     }
