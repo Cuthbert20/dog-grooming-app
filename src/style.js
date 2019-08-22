@@ -1,4 +1,14 @@
-import styled from 'styled-components'
+import styled, {keyframes} from 'styled-components'
+
+const FadeIn = keyframes `
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+`;
+
 
 export const ServicesContainer = styled.section `
     /* background-color: #1a1a1a; */
@@ -7,6 +17,8 @@ export const ServicesContainer = styled.section `
     margin: 10px 0;
     box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
     padding: 0 10px;
+    border-radius: 5px;
+    animation: ${FadeIn} 1s linear;
     /* border: 1px pink solid; */
     
     :hover {
@@ -90,6 +102,8 @@ export const PinkButton = styled.button `
     padding: 20px;
     border: 4px solid #494949;
     border-radius: 5px;
+    margin: 5px;
+    animation: ${FadeIn} 1s linear;
     :hover {
         color: #fff;
         background-color: #f6b93b;
@@ -112,15 +126,36 @@ export const LogoImg = styled.img `
 export const HeadingPrimary = styled.h1 `
     color: #fff;
     text-transform: uppercase;
-    
+    backface-visibility: hidden;
 `;
+// to use keyframes in Styled Components you need to import it { keyframes } from 'styled-components then...
+//you need to assign it to a const best to do this at the top of your style.js sheet so that you can use it in any component.
+const MoveInLeft = keyframes `
 
+  0% {
+      opacity: 0;
+      /* from left to right -100 comes form the left, 100 would be the right cause we are on the X axis */
+      transform: translateX(-100px);
+  }
+
+  80% {
+    transform: translateX(10px);
+  }
+
+  100% {
+      opacity: 1;
+      transform: translate(0);
+  }
+
+`
 export const HeadingMain = styled.span `
     display: block;
     font-size: 60px;
     font-weight: 500;
     letter-spacing: 25px;
+    animation: ${MoveInLeft} 2s linear;
 `;
+
 
 export const HeadingSub = styled.span `
     display: block;

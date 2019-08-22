@@ -18,11 +18,11 @@ export default class Main extends Component{
                     {/* <h4 style={{color: "black"}} >Welcome</h4> */}
                 <MainHeader>
                     {/* <LogoImg src="http://localhost:4001/static/hiclipart.com-id_dimfn.png" alt="logo"/> */}
-                    <i class="fad fa-5x fa-cut"></i>
+                    <i class="fad fa-5x fa-cut fade-in"></i>
                     <Link to='/login' ><PinkButton>Login</PinkButton></Link>
                     <Link to='/setupapp' ><PinkButton>Set Up Appointment</PinkButton></Link>
                     <Link to='/register' ><PinkButton>Register</PinkButton></Link>
-                    <i class="fad fa-5x fa-cut"></i>
+                    <i class="fad fa-5x fa-cut fade-in"></i>
                 {/* <LogoImg src="http://localhost:4001/static/hiclipart.com-id_dimfn.png" alt="logo"/> */}
                 </MainHeader>
                 </div> 

@@ -54,10 +54,10 @@ body {
   }
 }
 .heading-main{
-
-    animation-name: moveInLeft;
+/* see style.js for how I did keyframes in Styled Components. A lot better then adding a className  */
+    /* animation-name: moveInLeft;
     animation-duration: 2s;
-    animation-timing-function: ease-out;
+    animation-timing-function: ease-out; */
     
 
     /* Cool animation things you can do in CSS
