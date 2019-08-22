@@ -68,6 +68,7 @@ export const MainHeader = styled.header `
     /* border: 3px pink dotted; */
     display: flex;
     justify-content: space-around;
+    align-items: center;
     
 `;
 
@@ -107,8 +108,29 @@ export const LogoImg = styled.img `
     max-height: 50%;
 `;
 
-// setupapp
+//   App.js styled components
+export const HeadingPrimary = styled.h1 `
+    color: #fff;
+    text-transform: uppercase;
+    
+`;
 
+export const HeadingMain = styled.span `
+    display: block;
+    font-size: 60px;
+    font-weight: 500;
+    letter-spacing: 25px;
+`;
+
+export const HeadingSub = styled.span `
+    display: block;
+    font-size: 20px;
+    font-weight: 400px;
+    letter-spacing: 10px;
+`;
+
+
+// setupapp
 export const TimeOption = styled.option `
     height: 99px;
     padding: 100px;
@@ -189,3 +211,9 @@ export const SelectDogDrop = styled.select `
     padding: 0.7rem 1.2rem 0.7rem 1.2rem;
     border-radius: 4px;
 `;
+
+export const UserDashHeader = styled.main `
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+`

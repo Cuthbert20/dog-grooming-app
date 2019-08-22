@@ -103,8 +103,8 @@ module.exports = {
    addDog: async (req,res) => {
        const db = req.app.get('db')
        const { user_id } = req.session.user
-       const { dog_name, dog_breed } = req.body
-       const newDog = await db.add_dog({dog_name, dog_breed, user_id})
+       const { dog_name, dog_breed, dog_img } = req.body
+       const newDog = await db.add_dog({dog_name, dog_breed, user_id, dog_img})
        res.status(200).send(newDog)
    },
    services: async (req,res) => {

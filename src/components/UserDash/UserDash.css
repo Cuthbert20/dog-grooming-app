@@ -3,3 +3,11 @@
     margin-left: 10px;
     color: white;
 }
+
+.update-user-contain {
+    display: flex;
+    align-items: baseline;
+    border: 1px black solid;
+    flex-direction: column;
+    margin-top: 2rem;
+}

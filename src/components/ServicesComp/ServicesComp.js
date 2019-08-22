@@ -38,7 +38,6 @@ class ServicesComp extends Component {
     });
     return (
       <LandingContainer>
-        Services
         {allServices}
       </LandingContainer>
     );

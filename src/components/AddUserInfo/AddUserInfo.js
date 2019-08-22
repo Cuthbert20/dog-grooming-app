@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import './AddUserInfo.css'
 
 export default class AddUserInfo extends Component {
     state = {
@@ -12,7 +13,7 @@ export default class AddUserInfo extends Component {
         })
     }
     handleClick = () => {
-        console.log('hit',this.state)
+        // console.log('hit',this.state)
         const {username, phone} = this.state
         axios.put(`/auth/userinfo`, {username, phone})
         .then(res => {
@@ -23,8 +24,8 @@ export default class AddUserInfo extends Component {
     render() {
         // console.log(this.state)
         return (
-            <div>
-                Add Your Information
+            <div className='update-container'>
+                <span style={{fontWeight: 'bold'}}>Add Your Information</span> 
                 <br/>
                 <input onChange={e => this.handleChange(e, 'username')} placeholder='Your Name' type="text"/>
                 <input onChange={e => this.handleChange(e, 'phone')} placeholder="Phone Number" type="text"/>

@@ -15,7 +15,7 @@ body {
   text-align: center;
   /* background-color: lightblue; */
   /* background-image: linear-gradient(to right, black , gray); Standard syntax (must be last) */
-  height: 125vh;
+  height: 90vh;
   width: 100vw;
   font-family: 'Raleway', sans-serif;
   background-attachment: fixed;
@@ -24,7 +24,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   padding: 50px;
-  clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 70vh, 0 100%);
   /* margin: 20px; */
   /* opacity: 0.5; */
   margin: 40px;
@@ -52,4 +52,60 @@ body {
   to {
     transform: rotate(360deg);
   }
+}
+.heading-main{
+
+    animation-name: moveInLeft;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+    
+
+    /* Cool animation things you can do in CSS
+    look at MDN animation-timing-function as well ease, ease-in-out, ect ect
+    animation-timing-function:
+    animation-iteration-count: 3;
+    animation-delay: 2s; */
+}
+
+.heading-sub {
+  /* all in one line */
+  /* animation: moveInRight 2s ease-out; */
+  animation-name: moveInRight;
+  animation-duration: 2s;
+  animation-timing-function: ease-out;
+}
+
+@keyframes moveInLeft {
+  0% {
+      opacity: 0;
+      /* from left to right -100 comes form the left, 100 would be the right cause we are on the X axis */
+      transform: translateX(-100px);
+  }
+
+  80% {
+    transform: translateX(10px);
+  }
+
+  100% {
+      opacity: 1;
+      transform: translate(0);
+  }
+
+}
+
+@keyframes moveInRight {
+  0% {
+      opacity: 0;
+      transform: translateX(100px);
+  }
+
+  80% {
+    transform: translateX(-10px);
+  }
+
+  100% {
+      opacity: 1;
+      transform: translate(0);
+  }
+
 }

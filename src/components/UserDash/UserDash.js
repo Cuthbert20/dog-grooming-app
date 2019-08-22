@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import UpdateUser from '.././UpdateUser/UpdateUser'
 import AddUserInfo from '.././AddUserInfo/AddUserInfo'
-import { PinkButton } from '../../style'
+import { PinkButton, UserDashHeader } from '../../style'
 import './UserDash.css'
 
 export default class UserDash extends Component {
@@ -27,21 +27,28 @@ export default class UserDash extends Component {
     render() {
         return (
             <div>
+            <UserDashHeader>
+                <div>
                 <span style={{fontWeight: 'bold'}} >User Dashboard</span>    
                 <i className="fad fa-cut sissors"></i>
-                <hr/>
+                </div>
                 <Link to='/setupapp' ><PinkButton>Set Up Appointment</PinkButton></Link>
                 <hr/>
                 <PinkButton onClick={this.handleClick} >Add your dogs Info</PinkButton>
                 <hr/>
-                {this.state.render ? <UpdateUser /> : null}
+                
                 <PinkButton onClick={this.userClick} >Add Your Info</PinkButton>
                 <hr/>
                 <PinkButton onClick={this.historyClick} >Appointment History</PinkButton>
                 <hr/>
                 <PinkButton>Your Dogs</PinkButton>
-                {this.state.userRender ? <AddUserInfo /> : null}
+                
                 {/* <UserInfo /> */}
+            </UserDashHeader>
+                <div className='update-user-contain'>
+                    {this.state.render ? <UpdateUser /> : null}
+                    {this.state.userRender ? <AddUserInfo /> : null}
+                </div>
             </div>
         )
     }

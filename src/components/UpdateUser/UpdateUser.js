@@ -81,6 +81,8 @@ class UpdateUser extends Component {
             <span onClick={() => this.buttonClick()} ><i class="fad fa-play fa-arrow-right"></i></span>
           </li>
           </AddDogContainer>
+          <br/>
+          <input type="text"/>
           {/* <li><input onChange={e => this.inputChange(e, "username")} value={username} placeholder='Ower Name' type="text"/></li>
                     <li><input onChange={e => this.inputChange(e, "phone")} value={phone} placeholder='Phone Number' type="text"/></li> */}
           {/* <button onClick={() => this.buttonChange()}>Submit</button> */}

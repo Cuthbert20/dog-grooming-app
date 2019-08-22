@@ -4,7 +4,7 @@ import routes from './routes';
 import Nav from '../src/components/Nav/Nav'
 import { withRouter } from 'react-router-dom'
 import UserInfo from './components/UserInfo/UserInfo'
-import { AppArticle } from './style'
+import { AppArticle, HeadingPrimary, HeadingMain, HeadingSub } from './style'
 
 function App(props) {
 
@@ -14,7 +14,7 @@ function App(props) {
   return (
     <div>
     <div className="App">
-     {props.location.pathname === "/" ? <h4>Welcome</h4> : <Nav />}
+     {props.location.pathname === "/" ? <HeadingPrimary><HeadingMain className='heading-main' >Dog Grooming</HeadingMain><HeadingSub className='heading-sub' >Where You can make your dogs pretty</HeadingSub></HeadingPrimary> : <Nav />}
      {routes}
     </div>
     <AppArticle>
