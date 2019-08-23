@@ -138,5 +138,13 @@ module.exports = {
        const db = req.app.get('db')
        const bookings = await db.admin_dashboard()
        res.status(200).send(bookings)
+   },
+   bookedUser: async (req,res) => {
+    //    console.log(req.params)
+       const db = req.app.get('db')
+       const { id: user_id } = req.params
+       const user = await db.get_a_user([user_id])
+       console.log(user)
+       res.status(200).send(user)
    }
 }

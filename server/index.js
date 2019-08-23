@@ -30,7 +30,7 @@ app.post('/dog/booking', ctrl.bookApp)
 app.get('/dog/userdogs', ctrl.userDogs)
 app.get('/dog/serviced', ctrl.serviceHistory)
 app.get('/auth/admins', ctrl.adminDash)
-app.get('/auth/booked/user/:id', ctrl.bookedUser)
+app.get('/auth/booked/:id', ctrl.bookedUser)
 
 
 massive(CONNECTION_STRING).then(db => {
