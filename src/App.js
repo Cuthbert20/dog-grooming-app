@@ -4,27 +4,33 @@ import routes from './routes';
 import Nav from '../src/components/Nav/Nav'
 import { withRouter } from 'react-router-dom'
 import UserInfo from './components/UserInfo/UserInfo'
-import { AppArticle, HeadingPrimary, HeadingMain, HeadingSub, AppMainContainer } from './style'
+import { AppArticle, HeadingPrimary, HeadingMain, HeadingSub, AppMainContainer, WhiteBtn } from './style'
 import Contact from './components/Contact/Contact'
 
 class App extends Component{
-  state: {
-    
+  state = {
+    renderContact: false
   }
-  render(props){
+  handleClick = () => {
+    this.setState({
+      renderContact: !this.state.renderContact
+    })
+  }
+  render(){
 //   const onScroll = (e) => {
 //     console.log('scrolling', e)
 // }
+console.log(this.state)
+const { renderContact } = this.state
   return (
     <div >
     <div className="App">
-     {props.location.pathname === "/" ? <HeadingPrimary><HeadingMain className='heading-main' >Dog Grooming</HeadingMain><HeadingSub className='heading-sub' >Where You can make your dogs pretty</HeadingSub></HeadingPrimary> : <Nav />}
+     {this.props.location.pathname === "/" ? <HeadingPrimary><HeadingMain className='heading-main' >Dog Grooming</HeadingMain><HeadingSub className='heading-sub' >Where You can make your dogs pretty</HeadingSub></HeadingPrimary> : <Nav />}
      {routes}
     </div>
     <AppMainContainer>
-    <p>hi</p>
-    <p>HERE WE GO</p>
-      <p>hi</p>
+      {renderContact ? <Contact /> : null }
+      <WhiteBtn onClick={this.handleClick} >Contact Us</WhiteBtn>
     </AppMainContainer>
     {/* <AppArticle>
       {props.location.pathname === "/dashboard" && <UserInfo />}

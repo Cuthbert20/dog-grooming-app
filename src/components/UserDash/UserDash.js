@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import UpdateUser from '.././UpdateUser/UpdateUser'
 import AddUserInfo from '.././AddUserInfo/AddUserInfo'
-import { PinkButton, UserDashHeader } from '../../style'
+import { UserDashHeader, UserDashTitle } from '../../style'
 import './UserDash.css'
 
 export default class UserDash extends Component {
@@ -32,19 +32,19 @@ export default class UserDash extends Component {
             <div>
             <UserDashHeader>
                 <div>
-                <span style={{fontWeight: 'bold'}} >User Dashboard</span>    
+                <UserDashTitle style={{fontWeight: 'bold'}} >User Dashboard</UserDashTitle>    
                 <i className="fad fa-cut sissors"></i>
                 </div>
-                <Link to='/setupapp' ><PinkButton>Set Up Appointment</PinkButton></Link>
+                <Link to='/setupapp' ><button className='btn btn1' >Set Up Appointment</button></Link>
                 <hr/>
-                <PinkButton onClick={this.handleClick} >Add your dogs Info</PinkButton>
+                <button className='btn btn2' onClick={this.handleClick} >Add your dogs Info</button>
                 <hr/>
                 
-                <PinkButton onClick={this.userClick} >Add Your Info</PinkButton>
+                <button className='btn btn1' onClick={this.userClick} >Add Your Info</button>
                 <hr/>
-                <PinkButton onClick={this.historyClick} >Appointment History</PinkButton>
+                <button className='btn btn2' onClick={this.historyClick} >Appointment History</button>
                 <hr/>
-                <PinkButton onClick={this.userDogClick} >Your Dogs</PinkButton>
+                <button className='btn btn1' onClick={this.userDogClick} >Your Dogs</button>
                 
                 {/* <UserInfo /> */}
             </UserDashHeader>

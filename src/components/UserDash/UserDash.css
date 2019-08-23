@@ -11,3 +11,58 @@
     flex-direction: column;
     margin-top: 2rem;
 }
+
+.btn {
+    border: 1px solid #7ab3da;
+    background: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    /* margin: 5px; */
+    transition: 0.8s;
+    position: relative;
+    overflow: hidden;
+
+}
+.btn1,.btn2 {
+    color: #fff;
+}
+
+.btn1:hover,.btn2:hover{
+    color: #7ab3da
+}
+
+.btn::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background: #7ab3da;
+    z-index: -1;
+    transition: 0.8s;
+
+}
+
+.btn1::before {
+    top: 0;
+    border-radius: 0 0 50% 50%;
+}
+
+.btn2::before {
+    bottom: 0;
+    border-radius: 50% 50% 0 0;
+}
+
+.btn1::before,.btn2::before{
+    height: 180%;
+}
+
+.btn1:hover::before,.btn2:hover::before{
+    height: 0%;
+}
+
+
+
+
+

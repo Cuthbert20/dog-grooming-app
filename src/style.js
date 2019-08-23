@@ -204,8 +204,9 @@ export const AppMainContainer = styled.div `
     border: 1px red solid;
     position: sticky;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     justify-content: space-around;
+    flex-direction: column;
 `;
 
 
@@ -302,7 +303,7 @@ export const DogImg = styled.img `
     height: 225px;
     width: 225px;
     object-fit: scale-down;
-    border-radius: 40px 5px 40px 5px;
+    border-radius: 60px 10px 60px 10px;
     animation: ${FadeIn} 1s linear;
 `;
 
@@ -329,3 +330,23 @@ export const BookingContainer = styled.main `
     flex-wrap: wrap;
     height: 300px;
 `;
+
+export const DogName = styled.h4 `
+    font-weight: 700px;
+    color: white;
+    letter-spacing: 7px;
+`;
+
+export const DogBreed = styled.h5 `
+    font-weight: 300px;
+    color: white;
+    letter-spacing: 1px;
+    margin: 7px;
+`;
+
+export const UserDashTitle = styled.h1 `
+    color: white;
+    font-weight: 300;
+    letter-spacing: 3px;
+
+`

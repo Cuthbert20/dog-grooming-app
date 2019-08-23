@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 // import Dropzone from 'react-dropzone'
-import { DogImg, DogImgContainer } from '../../style'
+import { DogImg, DogImgContainer, DogName, DogBreed } from '../../style'
 
 // const CLOUDINARY_UPLOAD_PRESET = process.env.REACT_APP_COUDINARY_UPLOAD_PRESET; //how to grab .env info on the front end
 // const REACT_APP_CLOUDINARY_CLOUD_NAME = process.env.REACT_APP_CLOUDINARY_CLOUD_NAME;
@@ -33,9 +33,9 @@ class UserDogs extends Component {
                     <span key={val.dog_id} >
                         {/* <i className="fas fa-paw"></i> */}
                         {/* <li>{val.dog_name}</li> */}
-                        {val.dog_img === null ? null : <h4>{val.dog_name}</h4> }
+                        {val.dog_img === null ? null : <DogName>{val.dog_name}</DogName> }
                         {val.dog_img === null ? null : <DogImg src={val.dog_img} />}
-                        {val.dog_img === null ? null : <h6>{val.dog_breed}</h6>}
+                        {val.dog_img === null ? null : <DogBreed>{val.dog_breed}</DogBreed>}
                     </span>
                 </div>
             )
