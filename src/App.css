@@ -24,10 +24,12 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   padding: 50px;
+  /* clip-path: polygon(50% 2%, 89% 3%, 89% 83%, 4% 98%, 4% 2%); */
   clip-path: polygon(0 0, 100% 0, 100% 70vh, 0 100%);
-  /* margin: 20px; */
+  /* border: 2px yellow solid; */
+  /* margin-right: 10px; */
   /* opacity: 0.5; */
-  margin: 40px;
+  /* margin: 40px; */
 }
 
 .App-header {

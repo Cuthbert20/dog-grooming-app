@@ -144,7 +144,10 @@ module.exports = {
        const db = req.app.get('db')
        const { id: user_id } = req.params
        const user = await db.get_a_user([user_id])
-       console.log(user)
-       res.status(200).send(user)
+       console.log(user[0])
+       //deleting password from the user array of objects at index 0 
+       //so that the password isn't sent back with the response.
+       delete user[0].password
+       res.status(200).send(user[0])
    }
 }

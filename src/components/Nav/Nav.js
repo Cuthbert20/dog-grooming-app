@@ -19,7 +19,7 @@ const StyledNav = styled.div `
     transform: translateX(-50%);
 
     &:hover{
-        background-color: purple;
+        background-color: rgba(50,50,150,0.8);
     }
 
     &:focus{
@@ -32,10 +32,10 @@ class Nav extends Component{
         scrolled: false
     }
     componentDidMount(){
-        console.log(window)
+        // console.log(window)
         window.document.addEventListener('scroll', () => {
             const isTop = window.scrollY < 150;
-            console.log(isTop)
+            // console.log(isTop)
             if(isTop !== true) {
                 this.setState({
                    scrolled: true 

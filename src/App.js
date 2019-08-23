@@ -1,28 +1,38 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
 import routes from './routes';
 import Nav from '../src/components/Nav/Nav'
 import { withRouter } from 'react-router-dom'
 import UserInfo from './components/UserInfo/UserInfo'
-import { AppArticle, HeadingPrimary, HeadingMain, HeadingSub } from './style'
+import { AppArticle, HeadingPrimary, HeadingMain, HeadingSub, AppMainContainer } from './style'
+import Contact from './components/Contact/Contact'
 
-function App(props) {
-
+class App extends Component{
+  state: {
+    
+  }
+  render(props){
 //   const onScroll = (e) => {
 //     console.log('scrolling', e)
 // }
   return (
-    <div>
+    <div >
     <div className="App">
      {props.location.pathname === "/" ? <HeadingPrimary><HeadingMain className='heading-main' >Dog Grooming</HeadingMain><HeadingSub className='heading-sub' >Where You can make your dogs pretty</HeadingSub></HeadingPrimary> : <Nav />}
      {routes}
     </div>
+    <AppMainContainer>
+    <p>hi</p>
+    <p>HERE WE GO</p>
+      <p>hi</p>
+    </AppMainContainer>
     {/* <AppArticle>
       {props.location.pathname === "/dashboard" && <UserInfo />}
     </AppArticle> */}
     </div>
     
   );
+  }
 }
 
 export default withRouter(App);

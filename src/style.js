@@ -198,6 +198,16 @@ export const HeadingSub = styled.span `
     letter-spacing: 10px;
 `;
 
+export const AppMainContainer = styled.div `
+    height: auto;
+    width: auto;
+    border: 1px red solid;
+    position: sticky;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+`;
+
 
 // setupapp
 export const TimeOption = styled.option `
