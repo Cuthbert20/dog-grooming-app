@@ -149,3 +149,24 @@ dog_id = 10;
 INSERT INTO dogs (user_id, dog_name, dog_breed, dog_img)
 VALUES
 (9, 'Buffy', 'American BUlly', 'https://i.pinimg.com/564x/13/a8/1b/13a81b74cdc942e3e06b8cfb92d3df33.jpg')
+
+--admin get for admin dashboard
+SELECT
+b.book_time,
+to_Char(b.book_date, 'Mon dd, yyyy') AS book_date,
+b.dog_id,
+b.user_id,
+b.service_id,
+b.book_id,
+d.dog_name,
+d.dog_breed,
+d.dog_img,
+u.username,
+u.phone,
+u.email,
+s.service_name,
+s.service_price
+FROM booking b INNER JOIN users u on b.user_id = u.user_id
+INNER JOIN dogs d on b.dog_id = d.dog_id
+INNER JOIN services s on b.service_id = s.service_id
+ORDER BY b.book_date ASC;

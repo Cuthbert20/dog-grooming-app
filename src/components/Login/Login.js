@@ -23,19 +23,17 @@ class Login extends Component{
         var { login_name, password } =  this.state
         let res = await axios.post('/auth/login', {login_name, password})
         // var { login_name, email } = res.data
-        // console.log('hit', res.data)
+        console.log('hit', res.data)
         this.props.setUser(res.data)
-        this.props.history.push('/dashboard')
+        // this.props.history.push('/dashboard') REMOVED BECAUSE
         // history and match come off of this.props it has access to those values because of our switch on our index.js
         // console.log(this.props, 'hit')
-        // .then(res => {
-        //     this.setState({
-        //         should I reset state of login_name to ''
-        //         login_name: res.data.login_name,
-        //         password: ''
-        //     })
-        //     console.log(this.state)
-        // })
+        if(res.data.admin_user === false){
+            this.props.history.push('/dashboard')
+        }
+        else{
+            this.props.history.push('/dashboard/admin')
+        }
     }
     render(){
         const { login_name, password } = this.state
@@ -44,9 +42,9 @@ class Login extends Component{
                 <div>
                     <HeaderOne>Log In</HeaderOne>
                 </div>
-                <input class='text-input' onChange={e => this.handleChange(e, 'login_name')} value={login_name} placeholder="login Name" type="text"/>
+                <input className='text-input' onChange={e => this.handleChange(e, 'login_name')} value={login_name} placeholder="login Name" type="text"/>
                 <br/>
-                <input class='text-input'  onChange={e => this.handleChange(e, 'password')} value={password} placeholder='password' type="password"/>
+                <input className='text-input'  onChange={e => this.handleChange(e, 'password')} value={password} placeholder='password' type="password"/>
                 <br/>
                 <WhiteBtn onClick={this.login} >Click Me</WhiteBtn>
                 {/* <br/> */}

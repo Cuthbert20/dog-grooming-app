@@ -133,5 +133,10 @@ module.exports = {
        const { user_id } = req.session.user
        const services = await db.user_service_history([user_id])
        res.status(200).send(services)
+   },
+   adminDash: async (req,res) => {
+       const db = req.app.get('db')
+       const bookings = await db.admin_dashboard()
+       res.status(200).send(bookings)
    }
 }

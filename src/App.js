@@ -17,9 +17,9 @@ function App(props) {
      {props.location.pathname === "/" ? <HeadingPrimary><HeadingMain className='heading-main' >Dog Grooming</HeadingMain><HeadingSub className='heading-sub' >Where You can make your dogs pretty</HeadingSub></HeadingPrimary> : <Nav />}
      {routes}
     </div>
-    <AppArticle>
+    {/* <AppArticle>
       {props.location.pathname === "/dashboard" && <UserInfo />}
-    </AppArticle>
+    </AppArticle> */}
     </div>
     
   );

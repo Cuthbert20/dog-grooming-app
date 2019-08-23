@@ -132,6 +132,10 @@ export const WhiteBtn = styled.button `
     margin: 2px 8px;
     border: none;
     transition: all .2s;
+    
+    :focus {
+        outline: 0;
+    }
 
     :hover {
         transform: translateY(-3px);
@@ -303,5 +307,15 @@ export const HeaderOne = styled.h1 `
     font-size: 60px;
     font-weight: 500;
     letter-spacing: 25px;
-    animation: ${MoveInLeft} 2s linear;
+    animation: ${MoveInLeft} 1s linear;
+`;
+
+// admin dashboard
+
+export const BookingContainer = styled.main `
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    height: 300px;
 `;
