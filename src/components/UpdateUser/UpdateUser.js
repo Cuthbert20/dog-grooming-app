@@ -4,6 +4,7 @@ import "./UpdateUser.css";
 import axios from "axios";
 import {AddDogContainer, DogUpdateList, SelectDogDrop, DogImg  } from '../../style'
 import Dropzone from 'react-dropzone'
+import Swal from 'sweetalert2'
 
 const CLOUDINARY_UPLOAD_PRESET = process.env.REACT_APP_COUDINARY_UPLOAD_PRESET; //how to grab .env info on the front end
 const REACT_APP_CLOUDINARY_CLOUD_NAME = process.env.REACT_APP_CLOUDINARY_CLOUD_NAME;
@@ -78,7 +79,7 @@ class UpdateUser extends Component {
   buttonClick = () => {
     const { dog_breed, dog_name, dog_img} = this.state;
     axios.post(`/auth/adddog`, { dog_breed, dog_name, dog_img }).then(() => {
-      alert(`your doggy has been added`);
+      Swal.fire(`your doggy has been added`)
     });
   };
   // buttonChange(body){

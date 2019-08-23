@@ -4,7 +4,7 @@ import routes from './routes';
 import Nav from '../src/components/Nav/Nav'
 import { withRouter } from 'react-router-dom'
 import UserInfo from './components/UserInfo/UserInfo'
-import { AppArticle, HeadingPrimary, HeadingMain, HeadingSub, AppMainContainer, WhiteBtn } from './style'
+import { HeadingPrimary, HeadingMain, HeadingSub, AppMainContainer, ContactBtn } from './style'
 import Contact from './components/Contact/Contact'
 
 class App extends Component{
@@ -30,7 +30,7 @@ const { renderContact } = this.state
     </div>
     <AppMainContainer>
       {renderContact ? <Contact /> : null }
-      <WhiteBtn onClick={this.handleClick} >Contact Us</WhiteBtn>
+      <ContactBtn onClick={this.handleClick} >Contact Us</ContactBtn>
     </AppMainContainer>
     {/* <AppArticle>
       {props.location.pathname === "/dashboard" && <UserInfo />}

@@ -5,7 +5,8 @@ import { AppointmentContainer } from '../../style'
 import axios from 'axios'
 import { ServicesContainer, ServicesHeader, ServiceTitle,
     ServicePrice, TimeSelect, BookingForm} from '../../style'
-    import './SetupApp.css'
+import './SetupApp.css'
+import Swal from 'sweetalert2'
 
 const times = ['9am', '10am', '11am', '12pm']
 
@@ -47,7 +48,7 @@ class SetupApp extends Component {
         console.log(this.state)
         axios.post(`/dog/booking`, {book_date: date, book_time: time, service_id, dog_id})
         .then(() => {
-            alert(`Appointment set for ${date} at ${time}`)
+            Swal.fire(`Appointment set for ${date} at ${time}`)
             this.props.history.push('/dashboard')
         })
 

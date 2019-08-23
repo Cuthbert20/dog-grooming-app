@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import './AddUserInfo.css'
+import Swal from 'sweetalert2'
 
 export default class AddUserInfo extends Component {
     state = {
@@ -18,7 +19,7 @@ export default class AddUserInfo extends Component {
         axios.put(`/auth/userinfo`, {username, phone})
         .then(res => {
             console.log(res.data[0].login_name)
-            alert(`${res.data[0].login_name} has been updated`)
+            Swal.fire(`${res.data[0].login_name} has been updated`)
         })
     }
     render() {

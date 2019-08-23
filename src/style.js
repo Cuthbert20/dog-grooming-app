@@ -350,3 +350,30 @@ export const UserDashTitle = styled.h1 `
     letter-spacing: 3px;
 
 `
+
+export const ContactBtn = styled.button `
+    text-transform: uppercase;
+    background-color: #7ab3da;
+    color: #fff;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 30px 5px 30px 5px;
+    margin: 2px 8px;
+    border: none;
+    transition: all .2s;
+    
+    :focus {
+        outline: 0;
+    }
+
+    :hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0,0,0,.3);
+    }
+
+    :active {
+        transform: translateY(-1px);
+        box-shadow: 0 5px 9px rgba(0,0,0,.3);
+    }
+    
+`;
