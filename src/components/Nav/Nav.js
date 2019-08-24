@@ -11,7 +11,8 @@ import './Nav.css'
 
 const NavWrapper = styled.div `
     /* outline: 5px solid white; */
-    min-height: 32px;
+    min-height: 40px;
+    margin-bottom: 40px;
 `;
 const StyledNav = styled.div `
     position: fixed;

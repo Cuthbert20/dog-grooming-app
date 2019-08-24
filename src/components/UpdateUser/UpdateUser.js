@@ -129,11 +129,10 @@ class UpdateUser extends Component {
               placeholder="Enter Dog Name"
               type="text"
             />
-            <span onClick={() => this.buttonClick()} ><i className="fad fa-play fa-arrow-right"></i></span>
+            <span onClick={() => this.buttonClick()} ><i className="fad fa-check fa-arrow-right"></i></span>
           </li>
           </AddDogContainer>
           <br/>
-          <input type="text"/>
           <Dropzone
             style={{ border: "1px solid black" }}
             multiple={true} //allows multiple images to be uploaded
@@ -145,7 +144,7 @@ class UpdateUser extends Component {
                 <div {...getRootProps()}>
                   <input {...getInputProps()} />
                   {
-                    <p>
+                    <p style={{border: '1px black solid'}} >
                       Click to select files to upload.
                     </p>
                   }
