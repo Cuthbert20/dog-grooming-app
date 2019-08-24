@@ -28,6 +28,9 @@ export const ServicesContainer = styled.section `
         margin-left: 50px;
         margin-right: 50px;
     }
+    @media (max-width: 700px){
+        width: 80%;
+    }
     `;
 export const LandingContainer = styled.section `
     /* background-color: #1a1a1a; */
@@ -40,7 +43,7 @@ export const LandingContainer = styled.section `
     border-radius: 5px;
     /* start this styling at 650px */
     @media (min-width: 650px) {
-        width: 800px;
+        width: 90%;
         /* centered main with margin: auto */
         margin: auto;
     }
@@ -87,6 +90,10 @@ export const MainHeader = styled.header `
     align-items: center;
     @media (max-width: 750px){
         justify-content: center;
+    }
+    @media (max-width: 535px){
+        flex-direction: column;
+        
     }
 `;
 
@@ -159,7 +166,9 @@ export const WhiteBtn = styled.button `
         height: 100px;
         width: 100px;
     } */
-    
+    @media (max-width: 500px){
+        padding: 5px 20px;
+    }
 `;
 
 //   App.js styled components
@@ -194,6 +203,14 @@ export const HeadingMain = styled.span `
     font-weight: 500;
     letter-spacing: 25px;
     animation: ${MoveInLeft} 2s linear;
+    @media (max-width: 550px){
+        font-size: 40px;
+    }
+    @media (max-width: 415px){
+        font-size: 20px;
+        padding-top: 5px;
+        margin-bottom: 5px;
+    }
 `;
 
 
@@ -202,6 +219,9 @@ export const HeadingSub = styled.span `
     font-size: 20px;
     font-weight: 400px;
     letter-spacing: 10px;
+    @media (max-width: 415px){
+        font-size: 15px;
+    }
 `;
 
 export const AppMainContainer = styled.div `
@@ -324,7 +344,11 @@ export const HeaderOne = styled.h1 `
     font-size: 60px;
     font-weight: 500;
     letter-spacing: 25px;
-    animation: ${MoveInLeft} 1s linear;
+    animation: ${MoveInLeft} 1s linear
+    @media (max-width: 500px){
+        font-size: 30px;
+        letter-spacing: 10px;
+    }
 `;
 
 // admin dashboard
@@ -381,5 +405,7 @@ export const ContactBtn = styled.button `
         transform: translateY(-1px);
         box-shadow: 0 5px 9px rgba(0,0,0,.3);
     }
-    
+    @media (max-width: 500px){
+        padding: 5px 20px;
+    }
 `;
