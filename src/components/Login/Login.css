@@ -14,3 +14,9 @@
     border: 5px solid rgb(81, 203, 238, 1);
 }
 
+@media (max-width: 500px){
+    .text-input {
+        padding: 2px;
+    }
+}
+

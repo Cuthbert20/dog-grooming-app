@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Raleway:400,500,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Raleway:200,300,400,500,700&display=swap');
 
 /* clearing out any presetup styling with margin, padding box-sizing */
 * {
@@ -122,7 +122,8 @@ html,body {
   .App {
     clip-path: none;
     /* background-color: pink; */
-    height: auto;
+    height: auto; /* may need to switch back to auto and comment out 100vh maybe */
+    height: 91vh;
     /* background-image: none; */
   }
 }

@@ -273,6 +273,21 @@ export const UserHistory = styled.article `
     align-items: flex-start;
     font-size: 24px;
     margin-top: 20px;
+    @media (max-width: 850px){
+        font-size: 20px;
+        
+    }
+    @media (max-width: 665px){
+        font-size: 18px;
+        /* display: inline-block; */
+    }
+    @media (max-width: 500px){
+        font-size: 14px;
+        background-color: white;
+        border-radius: 5px;
+        padding: 0 10px 0 10px;
+        align-items: center;
+    }
 `;
 
 export const AppArticle = styled.article `
@@ -289,7 +304,7 @@ export const AppArticle = styled.article `
 `;
 
 export const UserHistoryContainer = styled.summary `
-    margin-top: 125px;
+    margin-top: 20px;
 `;
 
 //UpdateUser Component
@@ -304,6 +319,12 @@ export const AddDogContainer = styled.article `
     border-radius: 4px;
     box-shadow: 0 0 5px #666;
     box-sizing: border-box;
+    @media (max-width: 1200px){
+        margin: 0;
+        padding: 4px 0;
+        width: 320px;
+        margin-top: 2px;
+    }
 `;
 
 export const DogUpdateList = styled.ul `
@@ -316,12 +337,18 @@ export const DogUpdateList = styled.ul `
 export const SelectDogDrop = styled.select `
     padding: 0.7rem 1.2rem 0.7rem 1.2rem;
     border-radius: 4px;
+    @media (max-width: 1200px){
+        padding: 0;
+    }
 `;
 
 export const UserDashHeader = styled.main `
     display: flex;
     align-items: center;
     justify-content: space-around;
+    @media (max-width: 1020px){
+        flex-direction: column;
+    }
 `
 // UserDogs Component
 
@@ -378,7 +405,9 @@ export const UserDashTitle = styled.h1 `
     color: white;
     font-weight: 300;
     letter-spacing: 3px;
-
+    @media (max-width: 1355px){
+        font-size: 25px;
+    }
 `
 
 export const ContactBtn = styled.button `
@@ -407,5 +436,16 @@ export const ContactBtn = styled.button `
     }
     @media (max-width: 500px){
         padding: 5px 20px;
+    }
+`;
+
+export const HistoryList = styled.ul `
+    align-items: flex-start;
+    @media (max-width: 850px){
+        flex-wrap: wrap;
+        /* align-items: center; */
+    }
+    @media (max-width: 700px){
+        align-items: center;
     }
 `;

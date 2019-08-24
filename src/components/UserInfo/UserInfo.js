@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from "axios"
-import { UserInfoMain, UserHistory, UserHistoryContainer } from '../../style'
+import { UserInfoMain, UserHistory, UserHistoryContainer, WhiteBtn, HistoryList } from '../../style'
 
 
 export default class UserInfo extends Component{
@@ -54,7 +54,7 @@ export default class UserInfo extends Component{
         return(
             <UserInfoMain>
                 <div>
-                    <select value={dog} onChange={e => this.handleChange(e, 'dog')} >
+                    {/* <select value={dog} onChange={e => this.handleChange(e, 'dog')} >
                         <option value="">See Your Dogs</option>
                         {userDogs.map(val => {
                             return (
@@ -63,12 +63,12 @@ export default class UserInfo extends Component{
                                 </option>
                             )
                         })}
-                    </select>
-                    <button onClick={this.backClick} >Back to Dashboard</button>
+                    </select> */}
                     <UserHistoryContainer>
-                    <ul  style={{alignItems: 'flex-start'}}>
+                    <HistoryList>
                         {allServices}
-                    </ul>
+                    <WhiteBtn onClick={this.backClick} >Back to Dashboard</WhiteBtn>
+                    </HistoryList>
                 </UserHistoryContainer>
                 </div>
                 

@@ -144,7 +144,7 @@ class UpdateUser extends Component {
                 <div {...getRootProps()}>
                   <input {...getInputProps()} />
                   {
-                    <p style={{border: '1px black solid'}} >
+                    <p style={{background: 'white'}} >
                       Click to select files to upload.
                     </p>
                   }
