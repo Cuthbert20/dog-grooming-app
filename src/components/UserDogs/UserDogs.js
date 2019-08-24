@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 // import Dropzone from 'react-dropzone'
-import { DogImg, DogImgContainer, DogName, DogBreed } from '../../style'
+import { DogImg, DogImgContainer, DogName, DogBreed, WhiteBtn } from '../../style'
 
 // const CLOUDINARY_UPLOAD_PRESET = process.env.REACT_APP_COUDINARY_UPLOAD_PRESET; //how to grab .env info on the front end
 // const REACT_APP_CLOUDINARY_CLOUD_NAME = process.env.REACT_APP_CLOUDINARY_CLOUD_NAME;
@@ -42,12 +42,11 @@ class UserDogs extends Component {
         })
         return(
             <div>
-                List of Users Dogs With Photos Displayed
                 <DogImgContainer>
                 {allDogs}
                 </DogImgContainer>
                 <hr/>
-                <button onClick={this.handleClick} >Back</button>
+                <WhiteBtn onClick={this.handleClick} >Back</WhiteBtn>
             </div>
         )
     }

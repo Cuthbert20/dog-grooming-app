@@ -358,12 +358,17 @@ export const DogImg = styled.img `
     object-fit: scale-down;
     border-radius: 60px 10px 60px 10px;
     animation: ${FadeIn} 1s linear;
+    margin: 0 2px 0 2px;
 `;
 
 export const DogImgContainer = styled.div `
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
+    @media (max-width: 320px){
+        flex-direction: column;
+    }
 `;
 
 export const HeaderOne = styled.h1 `
@@ -389,9 +394,13 @@ export const BookingContainer = styled.main `
 `;
 
 export const DogName = styled.h4 `
-    font-weight: 700px;
+    font-weight: 700;
     color: white;
     letter-spacing: 7px;
+    @media (max-width: 550px){
+        font-weight: 500;
+        font-size: 24px;
+    }
 `;
 
 export const DogBreed = styled.h5 `
