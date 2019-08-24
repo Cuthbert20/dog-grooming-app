@@ -2,8 +2,9 @@ import React, { Component } from 'react'
 import Axios from 'axios';
 import { WhiteBtn, BookingContainer, DogImg } from '../../style'
 import BookedUser from './BookedUser'
+import { connect } from 'react-redux'
 
-export default class AdminDash extends Component {
+class AdminDash extends Component {
     state = {
         bookings: [],
         index: 0,
@@ -12,6 +13,15 @@ export default class AdminDash extends Component {
     }
     componentDidMount(){
         this.getBookings()
+        this.isAdmin()
+    }
+    componentDidUpdate(){
+        this.isAdmin()
+    }
+    isAdmin = () => {
+        if(!this.props.admin_user){
+            this.props.history.push('/')
+        }
     }
     getBookings = () => {
         Axios.get('/auth/admins')
@@ -65,3 +75,11 @@ export default class AdminDash extends Component {
         )
     }
 }
+function mapStateToProps(reduxState){
+    const { admin_user } = reduxState
+    return{
+        admin_user
+    }
+}
+
+export default connect(mapStateToProps)(AdminDash)

@@ -36,6 +36,7 @@ class Login extends Component{
         }
     }
     render(){
+        console.log(this.props)
         const { login_name, password } = this.state
         return(
             <div>
@@ -53,5 +54,11 @@ class Login extends Component{
         )
     }
 }
+function mapStateToProps(reduxState){
+    const {admin_user} = reduxState
+    return{
+        admin_user
+    }
+}
 
-export default connect(null,{setUser})(Login)
+export default connect(mapStateToProps,{setUser})(Login)

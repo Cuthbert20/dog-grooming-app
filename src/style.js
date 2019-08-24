@@ -24,6 +24,10 @@ export const ServicesContainer = styled.section `
     :hover {
         background-color: rgba(10,20,50,0.5);
     }
+    @media (max-width: 850px){
+        margin-left: 50px;
+        margin-right: 50px;
+    }
     `;
 export const LandingContainer = styled.section `
     /* background-color: #1a1a1a; */
@@ -81,7 +85,9 @@ export const MainHeader = styled.header `
     display: flex;
     justify-content: space-around;
     align-items: center;
-    
+    @media (max-width: 750px){
+        justify-content: center;
+    }
 `;
 
 export const LogoDiv = styled.div `

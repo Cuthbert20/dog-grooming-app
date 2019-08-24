@@ -30,6 +30,7 @@ body {
   /* margin-right: 10px; */
   /* opacity: 0.5; */
   /* margin: 40px; */
+ 
 }
 
 .App-header {
@@ -111,3 +112,14 @@ body {
   }
 
 }
+
+@media (max-width: 1200px) {
+  .App {
+    clip-path: none;
+    /* background-color: pink; */
+    height: auto;
+    /* background-image: none; */
+  }
+}
+
+

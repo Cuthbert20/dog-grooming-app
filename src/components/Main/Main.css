@@ -3,3 +3,9 @@
 .fade-in {
     animation: fadeIn 1.5s linear;
 }
+
+@media (max-width: 750px) {
+  .fade-in {
+      display: none;
+  }
+}

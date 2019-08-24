@@ -13,6 +13,7 @@ const NavWrapper = styled.div `
     /* outline: 5px solid white; */
     min-height: 40px;
     margin-bottom: 40px;
+    /* border: 1px solid black; */
 `;
 const StyledNav = styled.div `
     position: fixed;
