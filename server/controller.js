@@ -149,5 +149,12 @@ module.exports = {
        //so that the password isn't sent back with the response.
        delete user[0].password
        res.status(200).send(user[0])
+   },
+   userMsg: async (req,res) => {
+       const db = req.app.get('db')
+       const {user_id } = req.session.user
+       const { user_msg } = req.body
+       const result = await db.contact_msg({user_id, user_msg})
+       res.status(200).send(result)
    }
 }

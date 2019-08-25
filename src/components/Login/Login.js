@@ -23,7 +23,7 @@ class Login extends Component{
         var { login_name, password } =  this.state
         let res = await axios.post('/auth/login', {login_name, password})
         // var { login_name, email } = res.data
-        console.log('hit', res.data)
+        // console.log('hit', res.data)
         this.props.setUser(res.data)
         // this.props.history.push('/dashboard') REMOVED BECAUSE
         // history and match come off of this.props it has access to those values because of our switch on our index.js
@@ -36,7 +36,7 @@ class Login extends Component{
         }
     }
     render(){
-        console.log(this.props)
+        // console.log(this.props)
         const { login_name, password } = this.state
         return(
             <div>

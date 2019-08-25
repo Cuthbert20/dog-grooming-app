@@ -170,3 +170,15 @@ FROM booking b INNER JOIN users u on b.user_id = u.user_id
 INNER JOIN dogs d on b.dog_id = d.dog_id
 INNER JOIN services s on b.service_id = s.service_id
 ORDER BY b.book_date ASC;
+
+--create contact table for messages sent through contact us
+CREATE TABLE contact (
+contact_id SERIAL PRIMARY KEY,
+user_id INT REFERENCES users(user_id),
+message VARCHAR(255)
+)
+
+--adding values into contact table
+INSERT INTO contact (user_id, message)
+VALUES
+(11, 'love your shop, its the best in town');
