@@ -245,15 +245,28 @@ export const TimeOption = styled.option `
 
 export const TimeSelect = styled.select `
     height: auto;
-    padding: 4px;
+    padding: 0px;
     border-radius: 5px;
     background: none;
     margin-left: 20px;
+    /* padding: 7px; */
+    background-color: rgba(255,255,255,0.5);
+    margin: 0 0 10px 0;
+    font-size: 15px;
 `
 
 export const BookingForm = styled.form `
     display: flex;
     justify-content: flex-start;
+    @media (max-width: 750px){
+        justify-content: center;
+        flex-direction: column;
+        width: 50%;
+        align-items: center;
+        position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    }
 `
 
 // creating segmented control with animation for dog list
@@ -457,4 +470,16 @@ export const HistoryList = styled.ul `
     @media (max-width: 700px){
         align-items: center;
     }
+`;
+
+export const SubmitBtn = styled.button `
+    background: pink;
+    border-radius: 40px 15px 15px 40px;
+`;
+
+export const DateSpan = styled.span `
+    font-weight: 300px;
+    font-size: 20px;
+    margin-right: 3px;
+    color: white;
 `;

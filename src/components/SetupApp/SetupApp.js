@@ -4,11 +4,11 @@ import {connect} from 'react-redux'
 import { AppointmentContainer } from '../../style'
 import axios from 'axios'
 import { ServicesContainer, ServicesHeader, ServiceTitle,
-    ServicePrice, TimeSelect, BookingForm} from '../../style'
+    ServicePrice, TimeSelect, BookingForm, WhiteBtn, DateSpan, DogName} from '../../style'
 import './SetupApp.css'
 import Swal from 'sweetalert2'
 
-const times = ['9am', '10am', '11am', '12pm']
+const times = ['9am', '10am', '11am', '12pm', '1pm', '2pm', "3pm"]
 
 class SetupApp extends Component {
     state = {
@@ -77,9 +77,9 @@ class SetupApp extends Component {
         })
         return (
             <AppointmentContainer>
-                <h4 style={{color: "black"}}>
+                <DogName>
                     Select a Service
-                </h4>
+                </DogName>
                 <div>
                     {allServices}
                     {/* <ServicesComp /> */}
@@ -87,8 +87,8 @@ class SetupApp extends Component {
                 <div>
                     <BookingForm>
                     <label>
-                        Date:
-                    <input onChange={e => this.inputChange(e, 'date')} value={date} type="date"/>
+                       <DateSpan>Date:</DateSpan> 
+                    <input className='text-input' onChange={e => this.inputChange(e, 'date')} value={date} type="date"/>
                     </label>
                     <TimeSelect onChange={e => this.inputChange(e, 'time')} >
                         <option value="">Select Time</option>
@@ -109,7 +109,7 @@ class SetupApp extends Component {
                             )
                         })}
                     </TimeSelect>
-                    <button onClick={() => this.handleClick()} >Submit</button>
+                    <WhiteBtn onClick={() => this.handleClick()} >Submit</WhiteBtn>
                     </BookingForm>
                     
                 </div>
