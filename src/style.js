@@ -370,7 +370,7 @@ export const DogImg = styled.img `
     height: 225px;
     width: 225px;
     object-fit: scale-down;
-    border-radius: 60px 10px 60px 10px;
+    border-radius: 100px 30px 100px 30px;
     animation: ${FadeIn} 1s linear;
     margin: 0 2px 0 2px;
 `;

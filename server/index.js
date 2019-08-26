@@ -17,7 +17,7 @@ app.use(session({
     }
 }))
 app.use("/static", express.static("./media"))
-
+app.use( express.static( `${__dirname}/../build` ) );
 //end points
 app.post('/auth/login', ctrl.login)
 app.post('/auth/register', ctrl.register)
