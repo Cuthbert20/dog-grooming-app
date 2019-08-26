@@ -202,6 +202,7 @@ export const HeadingMain = styled.span `
     font-size: 60px;
     font-weight: 500;
     letter-spacing: 25px;
+    color: white;
     animation: ${MoveInLeft} 2s linear;
     @media (max-width: 550px){
         font-size: 40px;
@@ -227,7 +228,7 @@ export const HeadingSub = styled.span `
 export const AppMainContainer = styled.div `
     height: auto;
     width: auto;
-    border: 1px red solid;
+    /* border: 1px red solid; */
     position: sticky;
     display: flex;
     align-items: center;
@@ -482,4 +483,64 @@ export const DateSpan = styled.span `
     font-size: 20px;
     margin-right: 3px;
     color: white;
+`;
+
+export const MsgBtn = styled.button `
+    text-transform: uppercase;
+    background-color: #fff;
+    color: #777;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 30px 5px 30px 5px;
+    margin: 2px 8px;
+    border: none;
+    transition: all .2s;
+    
+    :focus {
+        outline: 0;
+    }
+
+    :hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0,0,0,.3);
+    }
+
+    :active {
+        transform: translateY(-1px);
+        box-shadow: 0 5px 9px rgba(0,0,0,.3);
+    }
+    /* hidden psudeo element */
+    /* ::after {
+        content: '';
+        display: inline-block;
+        height: 100px;
+        width: 100px;
+    } */
+    @media (max-width: 500px){
+        padding: 5px 20px;
+    }
+`;
+
+export const TextInput = styled.input `
+    border: 5px solid white;
+    box-shadow:
+        inset 0 0 8px rgba(0,0,0,0.1),
+            0 0 16px rgba(0,0,0,0.1);
+    padding: 5px;
+    background-color: rgba(255,255,255,0.5);
+    margin: 0 0 5px 0;
+    transition: all 0.30s ease-in-out;
+    :focus {
+        box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+        border: 5px solid rgb(81, 203, 238, 1);
+    }
+    @media (max-width: 500px){
+        padding: 2px;
+    }
+`;
+
+export const RegMain = styled.main `
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 `;

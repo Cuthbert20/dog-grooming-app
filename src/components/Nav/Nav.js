@@ -5,7 +5,7 @@ import {userLogout} from '../../ducks/reducer'
 //when Component is not in your routes.js to give it access to the routes you need to import withRouter
 import {withRouter} from 'react-router-dom'
 import axios from 'axios'
-import Button from 'react-bootstrap/Button';
+// import Button from 'react-bootstrap/Button';
 import styled from 'styled-components'
 import './Nav.css'
 
@@ -20,13 +20,13 @@ const StyledNav = styled.div `
     left: 50%;
     transform: translateX(-50%);
 
-    &:hover{
+    /* &:hover{
         background-color: rgba(50,50,150,0.8);
     }
 
     &:focus{
         /*  */
-    }
+    } */
 `;
 
 class Nav extends Component{
@@ -56,6 +56,9 @@ class Nav extends Component{
         this.props.userLogout()
         this.props.history.push('/')
     }
+    handleClick = () => {
+        this.props.history.push('/dashboard')
+    }
 
     render(){
         // console.log("props on nav ",this.props)
@@ -69,7 +72,8 @@ class Nav extends Component{
             <StyledNav >
                 {this.props.login_name ? <> <span id='welcome' >How you doin, {this.props.login_name}</span>
                 <br/>
-                <Link to='/dashboard'><Button size='sm' variant="outline-danger">Home</Button></Link> <Button size='sm' variant="outline-primary" onClick={this.logout} >Logout</Button> </> : null}
+                <a className='nav-btn' onClick={this.handleClick}><i class="fad fa-home-lg-alt"></i></a> 
+                <a className='nav-btn' onClick={this.logout} ><i class="fad fa-sign-out-alt"></i></a> </> : null}
                 
             </StyledNav>
             </NavWrapper>

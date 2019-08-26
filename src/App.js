@@ -3,7 +3,7 @@ import './App.css';
 import routes from './routes';
 import Nav from '../src/components/Nav/Nav'
 import { withRouter } from 'react-router-dom'
-import UserInfo from './components/UserInfo/UserInfo'
+// import UserInfo from './components/UserInfo/UserInfo'
 import { HeadingPrimary, HeadingMain, HeadingSub, AppMainContainer, ContactBtn } from './style'
 import Contact from './components/Contact/Contact'
 import Swal from 'sweetalert2'
@@ -12,7 +12,7 @@ import axios from 'axios'
 class App extends Component{
   state = {
     renderContact: false,
-    user_msg: ''
+    // user_msg: ''
   }
   handleClick = () => {
     this.setState({

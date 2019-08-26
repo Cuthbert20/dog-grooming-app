@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Axios from 'axios';
-import { WhiteBtn, BookingContainer, DogImg } from '../../style'
+import { WhiteBtn, BookingContainer, DogImg, MsgBtn } from '../../style'
 import BookedUser from './BookedUser'
 import { connect } from 'react-redux'
 
@@ -47,7 +47,7 @@ class AdminDash extends Component {
         //should button set displayUser: true onClick when mapping over booking so I can give it the val.user_id value?
     }
     render() {
-        const { bookings, index, displayDetails  } = this.state
+        const { bookings, displayDetails  } = this.state
         console.log(this.state)
         // const service = bookings[this.state.index].service_name
         const allBookings = bookings.map(val => {
@@ -71,6 +71,7 @@ class AdminDash extends Component {
                 </BookingContainer>
                 
                 <WhiteBtn onClick={this.increaseIndex} >Next</WhiteBtn>
+                <MsgBtn>Messages</MsgBtn>
             </div>
         )
     }

@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import axios from 'axios'
 import { connect } from 'react-redux' 
 import {setUser} from '../../ducks/reducer'
+import { TextInput, RegMain, HeadingMain } from '../../style'
+import './Register.css'
 
 class Register extends Component{
     state = {
@@ -23,18 +25,19 @@ class Register extends Component{
         console.log(res.data)
         // var { login_name, email } = res.data
         this.props.setUser(res.data)
+        this.props.history.push('/dashboard')
     }
     
     render(){
         const { loginInput, emailInput, passwordInput } = this.state
         return(
-            <div>
-                Register Component
-                <input onChange={e => this.handleChange(e, 'loginInput')} value={loginInput} placeholder='login name' type="text"/>
-                <input onChange={e => this.handleChange(e, 'emailInput')} value={emailInput} placeholder='email' type="email"/>
-                <input onChange={e => this.handleChange(e, 'passwordInput')} value={passwordInput} placeholder='password' type="password"/>
-                <Link to='/dashboard' ><button onClick={this.registerUser} >Submit</button></Link>
-            </div>
+            <RegMain>
+                <HeadingMain>Register Here</HeadingMain>
+                <TextInput onChange={e => this.handleChange(e, 'loginInput')} value={loginInput} placeholder='login name' type="text"/>
+                <TextInput onChange={e => this.handleChange(e, 'emailInput')} value={emailInput} placeholder='email' type="email"/>
+                <TextInput onChange={e => this.handleChange(e, 'passwordInput')} value={passwordInput} placeholder='password' type="password"/>
+                <a className='submit-btn' onClick={this.registerUser} ><i class="fad fa-user-plus"></i></a>
+            </RegMain>
         )
     }
 }

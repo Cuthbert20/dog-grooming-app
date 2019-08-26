@@ -5,8 +5,8 @@ import { UserInfoMain, UserHistory, UserHistoryContainer, WhiteBtn, HistoryList 
 
 export default class UserInfo extends Component{
     state = {
-        userDogs: [],
-        dog: '',
+        // userDogs: [],
+        // dog: '',
         services: []
 
     }
@@ -39,7 +39,7 @@ export default class UserInfo extends Component{
         this.props.history.push('/dashboard')
     }
     render(){
-        const { userDogs, dog, services } = this.state
+        const { services } = this.state
         // console.log(services)
         const allServices = services.map(elm => {
             // console.log(elm)
