@@ -53,6 +53,9 @@ class SetupApp extends Component {
         })
 
     }
+    backClick = () => {
+        this.props.history.push('/')
+    }
     render() {
         // console.log(this.state)
         const { services, date, userDogs } = this.state;
@@ -110,6 +113,7 @@ class SetupApp extends Component {
                         })}
                     </TimeSelect>
                     <WhiteBtn onClick={() => this.handleClick()} >Submit</WhiteBtn>
+                    <WhiteBtn onClick={() => this.backClick()} >Back</WhiteBtn>
                     </BookingForm>
                     
                 </div>

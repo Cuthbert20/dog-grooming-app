@@ -91,7 +91,7 @@
     border: 3px solid rgb(81, 203, 238, 1);
 }
 
-@media (max-width: 500px){
+@media (max-width: 850px){
     .text-input {
         padding: 2px;
         width: 70%;

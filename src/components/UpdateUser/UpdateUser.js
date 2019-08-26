@@ -19,7 +19,8 @@ class UpdateUser extends Component {
     dog_img: '',
     uploadedFile: null,
     uploadedFileCloudinaryUrl: '',
-    images: []
+    images: [],
+    imgApi: []
     // username: '',
     // phone: ''
   };
@@ -35,7 +36,20 @@ class UpdateUser extends Component {
         // console.log(res.data)
         this.setState({ dogs: res.data });
       });
+      this.dogApiImg()
   }
+  dogApiImg = () => {
+    axios.get(`https://api.thedogapi.com/v1/images/search`,{
+      header: {
+        "x-api-key": process.env.REACT_APP_BREED_API_KEY
+      }
+    })
+    .then(res => {
+      this.setState({
+        imgApi: res.data[0].url
+      })
+    })
+  } 
   onImageDrop(files){ //handles when files are chosen
     this.setState({
       uploadedFile: files
@@ -87,6 +101,7 @@ class UpdateUser extends Component {
   // }
   render() {
     // console.log(this.props)
+    console.log(this.state.imgApi)
     const { dogs, dog_breed, dog_name, images } = this.state;
     let userImages = images.map(image => {
       return (

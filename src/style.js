@@ -31,6 +31,9 @@ export const ServicesContainer = styled.section `
     @media (max-width: 700px){
         width: 80%;
     }
+    @media (max-width: 550px){
+        align-items: center;
+    }
     `;
 export const LandingContainer = styled.section `
     /* background-color: #1a1a1a; */
@@ -166,7 +169,7 @@ export const WhiteBtn = styled.button `
         height: 100px;
         width: 100px;
     } */
-    @media (max-width: 500px){
+    @media (max-width: 850px){
         padding: 5px 20px;
     }
 `;
@@ -254,6 +257,9 @@ export const TimeSelect = styled.select `
     background-color: rgba(255,255,255,0.5);
     margin: 0 0 10px 0;
     font-size: 15px;
+    @media (max-width: 850px){
+        font-size: 12px;
+    }
 `
 
 export const BookingForm = styled.form `
@@ -373,6 +379,10 @@ export const DogImg = styled.img `
     border-radius: 100px 30px 100px 30px;
     animation: ${FadeIn} 1s linear;
     margin: 0 2px 0 2px;
+    @media (max-width: 700px){
+        height: 175px;
+        width: 175px;
+    }
 `;
 
 export const DogImgContainer = styled.div `
