@@ -156,5 +156,10 @@ module.exports = {
        const { user_msg } = req.body
        const result = await db.contact_msg({user_id, user_msg})
        res.status(200).send(result)
+   },
+   showMsg: async (req,res) => {
+       const db = req.app.get('db')
+       const messages = await db.show_msg()
+       res.status(200).send(messages)
    }
 }

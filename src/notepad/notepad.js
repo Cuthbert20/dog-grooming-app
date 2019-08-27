@@ -26,3 +26,18 @@ export default class notepad extends Component {
         )
     }
 }
+
+export const UserInfoInput = styled.input `
+  border: 5px solid white;
+    box-shadow:
+        inset 0 0 8px rgba(0,0,0,0.1),
+            0 0 16px rgba(0,0,0,0.1);
+    padding: 5px;
+    background-color: rgba(255,255,255,0.5);
+    margin: 0 0 5px 0;
+    transition: all 0.30s ease-in-out;
+    :focus {
+        box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+        border: 5px solid rgb(81, 203, 238, 1);
+    }
+`;

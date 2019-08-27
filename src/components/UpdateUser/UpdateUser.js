@@ -109,7 +109,7 @@ class UpdateUser extends Component {
           <figure>
               <DogImg src={image} alt=""/>
           </figure>
-          <p>{image}</p>
+          {/* <p>{image}</p> */}
         </div>
       )
     })

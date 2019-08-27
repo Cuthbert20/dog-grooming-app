@@ -12,6 +12,7 @@ import UserDash from '../src/components/UserDash/UserDash'
 import UserList from '../src/components/UserList/UserList'
 import UserInfo from '../src/components/UserInfo/UserInfo'
 import UserDogs from '../src/components/UserDogs/UserDogs'
+import AdminMgs from '../src/components/AdminDash/AdminMgs'
 
 export default (
     <Switch>
@@ -26,5 +27,6 @@ export default (
         <Route path='/dashboard/admin' component={AdminDash} />
         <Route path='/dashboard/history' component={UserInfo} />
         <Route path='/dashboard/userdog' component={UserDogs} />
+        <Route exact path='/dashboard/messages' component={AdminMgs} />
     </Switch>
 )

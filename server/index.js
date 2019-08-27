@@ -32,7 +32,7 @@ app.get('/dog/serviced', ctrl.serviceHistory)
 app.get('/auth/admins', ctrl.adminDash)
 app.get('/auth/booked/:id', ctrl.bookedUser)
 app.post('/auth/contact', ctrl.userMsg)
-
+app.get('/auth/mgs', ctrl.showMsg)
 
 massive(CONNECTION_STRING).then(db => {
     app.set('db', db)

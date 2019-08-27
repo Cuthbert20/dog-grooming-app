@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import './AddUserInfo.css'
 import Swal from 'sweetalert2'
+import { UserInfoInput, SubBtn } from '../../style.js'
 
 export default class AddUserInfo extends Component {
     state = {
@@ -28,9 +29,9 @@ export default class AddUserInfo extends Component {
             <div className='update-container'>
                 <span style={{fontWeight: 'bold'}}>Add Your Information</span> 
                 <br/>
-                <input onChange={e => this.handleChange(e, 'username')} placeholder='Your Name' type="text"/>
-                <input onChange={e => this.handleChange(e, 'phone')} placeholder="Phone Number" type="text"/>
-                <button onClick={() => this.handleClick()} >Submit</button>
+                <UserInfoInput onChange={e => this.handleChange(e, 'username')} placeholder='Your Name' type="text"/>
+                <UserInfoInput onChange={e => this.handleChange(e, 'phone')} placeholder="Phone Number" type="text"/>
+                <SubBtn onClick={() => this.handleClick()} >Submit</SubBtn>
             </div>
         )
     }

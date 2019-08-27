@@ -107,7 +107,9 @@ export const LogoDiv = styled.div `
 //SetupApp Component
 
 export const AppointmentContainer = styled.main `
-    border: 1px lightskyblue solid;
+    /* border: 1px lightskyblue solid; */
+    margin: 0 5px 0 5px;
+    padding: 0 2px 0 2px;
 `;
 
 // general Style Components
@@ -380,8 +382,11 @@ export const DogImg = styled.img `
     animation: ${FadeIn} 1s linear;
     margin: 0 2px 0 2px;
     @media (max-width: 700px){
-        height: 175px;
-        width: 175px;
+        height: 125px;
+        width: 125px;
+    }
+    @media (max-width: 500px){
+        display: none;
     }
 `;
 
@@ -553,4 +558,55 @@ export const RegMain = styled.main `
     display: flex;
     flex-direction: column;
     align-items: center;
+`;
+
+export const UserInfoInput = styled.input `
+  border: 3px solid white;
+    box-shadow:
+        inset 0 0 8px rgba(0,0,0,0.1),
+            0 0 16px rgba(0,0,0,0.1);
+    padding: 4px;
+    background-color: rgba(255,255,255,0.5);
+    margin: 0 0 5px 0;
+    transition: all 0.30s ease-in-out;
+    :focus {
+        box-shadow: 0 0 5px rgba(122, 179, 218, 1);
+        border: 3px solid rgb(81, 203, 238, 1);
+    }
+`;
+
+export const SubBtn = styled.button `
+    border-radius: 0 20px 20px 0px;
+    background: none;
+    border: 3px solid #f1f1f1;
+    color: white;
+    :hover {
+        box-shadow: 0 0 5px rgba(122, 179, 218, 1);
+        border: 3px solid rgb(81, 203, 238, 1);
+        color: rgb(81, 203, 238, 1);
+        background: #f1f1f1;
+    }
+`;
+
+export const UsernameMgs = styled.h3 `
+    color: #f1f1f1;
+    
+`
+export const MsgBodyHfive = styled.h5 `
+    color: #f1f1f1;
+    
+`;
+
+export const AdminHeader = styled.h1 `
+    color: #f1f1f1;
+    @media (max-width: 850px){
+        font-size: 1.25rem;
+    }
+`;
+
+export const AdminSubHead = styled.h3 `
+    color: #f1f1f1;
+    @media (max-width: 850px){
+        font-size: 1rem;
+    }
 `;

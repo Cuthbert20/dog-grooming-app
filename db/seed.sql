@@ -182,3 +182,11 @@ message VARCHAR(255)
 INSERT INTO contact (user_id, message)
 VALUES
 (11, 'love your shop, its the best in town');
+
+--selecing all contact messages with username from users table
+SELECT
+c.contact_id,
+c.user_id,
+c.message,
+u.username
+FROM contact c JOIN users u on c.user_id = u.user_id;

@@ -19,14 +19,6 @@ const StyledNav = styled.div `
     position: fixed;
     left: 50%;
     transform: translateX(-50%);
-
-    /* &:hover{
-        background-color: rgba(50,50,150,0.8);
-    }
-
-    &:focus{
-        /*  */
-    } */
 `;
 
 class Nav extends Component{
@@ -72,8 +64,8 @@ class Nav extends Component{
             <StyledNav >
                 {this.props.login_name ? <> <span id='welcome' >How you doin, {this.props.login_name}</span>
                 <br/>
-                <a className='nav-btn' onClick={this.handleClick}><i class="fad fa-home-lg-alt"></i></a> 
-                <a className='nav-btn' onClick={this.logout} ><i class="fad fa-sign-out-alt"></i></a> </> : null}
+                <a className='nav-btn' onClick={this.handleClick}><i className="fad fa-home-lg-alt"></i></a> 
+                <a className='nav-btn' onClick={this.logout} ><i className="fad fa-sign-out-alt"></i></a> </> : null}
                 
             </StyledNav>
             </NavWrapper>

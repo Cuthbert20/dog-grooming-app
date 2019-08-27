@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import Axios from 'axios';
-import { WhiteBtn, BookingContainer, DogImg, MsgBtn } from '../../style'
+import { WhiteBtn, BookingContainer, DogImg, AdminHeader, AdminSubHead } from '../../style'
 import BookedUser from './BookedUser'
 import { connect } from 'react-redux'
+// import AdminMgs from './AdminMgs'
 
 class AdminDash extends Component {
     state = {
@@ -46,6 +47,9 @@ class AdminDash extends Component {
     handleClick = () => {
         //should button set displayUser: true onClick when mapping over booking so I can give it the val.user_id value?
     }
+    showMgs = () => {
+        this.props.history.push('/dashboard/messages')
+    }
     render() {
         const { bookings, displayDetails  } = this.state
         console.log(this.state)
@@ -63,15 +67,15 @@ class AdminDash extends Component {
         })
         return (
             <div>
-                <h1>HEY BOSS</h1>
-                <h3>Here is your schedule</h3>
+                <AdminHeader>HEY BOSS</AdminHeader>
+                <AdminSubHead>Here is your schedule</AdminSubHead>
                 <BookingContainer>
                 {displayDetails ? <BookedUser id={this.state.user_id} /> : null}
                     {allBookings[this.state.index]}
                 </BookingContainer>
                 
                 <WhiteBtn onClick={this.increaseIndex} >Next</WhiteBtn>
-                <MsgBtn>Messages</MsgBtn>
+                <WhiteBtn onClick={this.showMgs} >Messages</WhiteBtn>
             </div>
         )
     }

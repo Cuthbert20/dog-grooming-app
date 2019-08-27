@@ -19,7 +19,7 @@ export default class BookedUser extends Component {
     render() {
         //we returned an object from our controller so that we don't have to map over the data see ctrl method bookedUser
         const { user } = this.state
-        console.log('user', user.email)
+        // console.log('user', user.email)
         // const userInfo = user.map(val => {
         //     return (
         //         <div>
