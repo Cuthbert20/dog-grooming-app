@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import {userLogout} from '../../ducks/reducer'
 //when Component is not in your routes.js to give it access to the routes you need to import withRouter

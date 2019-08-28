@@ -610,3 +610,9 @@ export const AdminSubHead = styled.h3 `
         font-size: 1rem;
     }
 `;
+
+export const PawContainer = styled.main `
+    @media (max-width: 1050px){
+        display: none;
+    }
+`;

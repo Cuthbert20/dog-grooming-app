@@ -1,24 +1,27 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import UpdateUser from '.././UpdateUser/UpdateUser'
 import AddUserInfo from '.././AddUserInfo/AddUserInfo'
-import { UserDashHeader, UserDashTitle } from '../../style'
+import { UserDashHeader, UserDashTitle, PawContainer } from '../../style'
 import './UserDash.css'
 
 export default class UserDash extends Component {
     state = {
         render: false,
-        userRender: false
+        userRender: false,
+        renderPaw: true
     }
     handleClick = () => {
         // const { render } = this.state
         this.setState({
-            render: !this.state.render
+            render: !this.state.render,
+            renderPaw: !this.state.renderPaw
         })
     }
     userClick = () => {
         this.setState({
-            userRender: !this.state.userRender
+            userRender: !this.state.userRender,
+            renderPaw: !this.state.renderPaw
         })
     }
     historyClick = () => {
@@ -27,7 +30,12 @@ export default class UserDash extends Component {
     userDogClick = () => {
         this.props.history.push('/dashboard/userdog')
     }
+    appClick = () => {
+        this.props.history.push('/setupapp')
+    }
     render() {
+        // console.log(this.state.renderPaw)
+        const { renderPaw } = this.state
         return (
             <div>
             <UserDashHeader>
@@ -35,7 +43,7 @@ export default class UserDash extends Component {
                 <UserDashTitle style={{fontWeight: 'bold'}} >User Dashboard</UserDashTitle>    
                 <i className="fad fa-cut sissors"></i>
                 </div>
-                <Link to='/setupapp' ><button className='btn btn1' >Set Up Appointment</button></Link>
+                <button onClick={() => this.appClick()}  className='btn btn1' >Set Up Appointment</button>
                 <hr/>
                 <button className='btn btn2' onClick={this.handleClick} >Add your dogs Info</button>
                 <hr/>
@@ -44,7 +52,7 @@ export default class UserDash extends Component {
                 <hr/>
                 <button className='btn btn2' onClick={this.historyClick} >Appointment History</button>
                 <hr/>
-                <button className='btn btn1' onClick={this.userDogClick} >Your Dogs</button>
+                <button className='btn btn1' onClick={() => this.userDogClick()} >Your Dogs</button>
                 
                 {/* <UserInfo /> */}
             </UserDashHeader>
@@ -52,6 +60,27 @@ export default class UserDash extends Component {
                     {this.state.render ? <UpdateUser /> : null}
                     {this.state.userRender ? <AddUserInfo /> : null}
                 </div>
+                  {renderPaw ? 
+                    <PawContainer>
+                    <div className="card middle">
+                        <div className="front" > 
+                            <img className="go-away" src="http://localhost:4001/static/test-paw.png" alt=""/>
+                        </div>
+                        <div className="back" >
+                            <div className="back-content middle">
+                                <h2>Dog Grooming</h2>
+                                <span>Follow Us On</span>
+                                <div className='small' >
+                                <i className="fab fa-instagram"></i>
+                                <i className="fab fa-youtube"></i>
+                                <i className="fab fa-twitter"></i>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </PawContainer>
+                  : null
+                }
             </div>
         )
     }
