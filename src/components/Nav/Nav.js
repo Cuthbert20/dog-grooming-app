@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import {userLogout} from '../../ducks/reducer'
 //when Component is not in your routes.js to give it access to the routes you need to import withRouter
-import {withRouter} from 'react-router-dom'
+import {} from 'react-router-dom'
 import axios from 'axios'
 // import Button from 'react-bootstrap/Button';
 import styled from 'styled-components'
