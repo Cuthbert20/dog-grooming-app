@@ -8,6 +8,7 @@ import axios from 'axios'
 // import Button from 'react-bootstrap/Button';
 import styled from 'styled-components'
 import './Nav.css'
+import { withRouter } from 'react-router-dom'
 
 const NavWrapper = styled.div `
     /* outline: 5px solid white; */
@@ -55,7 +56,7 @@ class Nav extends Component{
     render(){
         // console.log("props on nav ",this.props)
         //withRouter is what is giving me access to match, location, and history from this.props
-        // const { match, location, history } = this.props;
+        // const { cd .., location, history } = this.props;
         return(
             <NavWrapper className={this.state.scrolled && 'scrolled'}>
                 <div>
