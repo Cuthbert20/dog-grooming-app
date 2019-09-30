@@ -21,7 +21,7 @@ export default class Main extends Component{
                     <Link to='/login' ><WhiteBtn>Login</WhiteBtn></Link>
                     <Link to='/setupapp' ><WhiteBtn>Set Up Appointment</WhiteBtn></Link>
                     <Link to='/register' ><WhiteBtn>Register</WhiteBtn></Link>
-                    <i className="fad fa-5x fa-cut fade-in"></i>
+                    <i className="fad fa-5x fa-cut fa-rotate-180 fade-in"></i>
                 </MainHeader>
                 </div> 
                 <ServicesComp />

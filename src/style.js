@@ -266,7 +266,7 @@ export const TimeSelect = styled.select `
 
 export const BookingForm = styled.form `
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-evenly;
     @media (max-width: 750px){
         justify-content: center;
         flex-direction: column;

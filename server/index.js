@@ -16,6 +16,7 @@ app.use(session({
         maxAge: 1000 * 60 * 60 * 7
     }
 }))
+//middleware arron told me about to display local files.
 app.use("/static", express.static("./media"))
 app.use( express.static( `${__dirname}/../build` ) );
 //end points
