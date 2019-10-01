@@ -89,7 +89,7 @@ export const MainContainer = styled.section `
 export const MainHeader = styled.header `
     /* border: 3px pink dotted; */
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     @media (max-width: 750px){
         justify-content: center;

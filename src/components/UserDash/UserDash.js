@@ -4,12 +4,26 @@ import UpdateUser from '.././UpdateUser/UpdateUser'
 import AddUserInfo from '.././AddUserInfo/AddUserInfo'
 import { UserDashHeader, UserDashTitle, PawContainer } from '../../style'
 import './UserDash.css'
+import Axios from 'axios'
 
 export default class UserDash extends Component {
     state = {
         render: false,
         userRender: false,
-        renderPaw: true
+        renderPaw: true,
+        username: ""
+    }
+    componentDidMount() {
+        this.getUser()
+    }
+    getUser = () => {
+        Axios.get('/auth/session').then(res => {
+            if(res.data.user){
+                this.setState({
+                    username: res.data.user.username
+                })
+            }
+        })
     }
     handleClick = () => {
         // const { render } = this.state
@@ -35,12 +49,13 @@ export default class UserDash extends Component {
     }
     render() {
         // console.log(this.state.renderPaw)
-        const { renderPaw } = this.state
+        const { renderPaw, username } = this.state
+        console.log(username)
         return (
             <div>
             <UserDashHeader>
                 <div>
-                <UserDashTitle style={{fontWeight: 'bold'}} >User Dashboard</UserDashTitle>    
+                <UserDashTitle style={{fontWeight: 'bold'}} >{username}</UserDashTitle>    
                 <i className="fad fa-cut sissors"></i>
                 </div>
                 <button onClick={() => this.appClick()}  className='btn btn1' >Set Up Appointment</button>

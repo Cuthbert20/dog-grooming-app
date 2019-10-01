@@ -34,6 +34,8 @@ app.get('/auth/admins', ctrl.adminDash)
 app.get('/auth/booked/:id', ctrl.bookedUser)
 app.post('/auth/contact', ctrl.userMsg)
 app.get('/auth/mgs', ctrl.showMsg)
+app.get('/auth/session', ctrl.getSession)
+
 
 massive(CONNECTION_STRING).then(db => {
     app.set('db', db)

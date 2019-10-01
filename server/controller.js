@@ -161,5 +161,11 @@ module.exports = {
        const db = req.app.get('db')
        const messages = await db.show_msg()
        res.status(200).send(messages)
+   },
+   getSession: (req,res) => {
+       if(req.session){
+           console.log(req.session.user)
+           res.status(200).send(req.session)
+       }
    }
 }

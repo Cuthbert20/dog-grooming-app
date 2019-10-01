@@ -15,13 +15,12 @@ export default class Main extends Component{
             <MainDisplay >
                 <MainContainer>
                 <div>
-                    {/* <h4 style={{color: "black"}} >Welcome</h4> */}
                 <MainHeader>
-                    <i className="fad fa-5x fa-cut fade-in"></i>
+                    <i className="fad fa-4x fa-cut fade-in set-size"></i>
                     <Link to='/login' ><WhiteBtn>Login</WhiteBtn></Link>
-                    <Link to='/setupapp' ><WhiteBtn>Set Up Appointment</WhiteBtn></Link>
+                    {/* <Link to='/setupapp' ><WhiteBtn>Set Up Appointment</WhiteBtn></Link> */}
                     <Link to='/register' ><WhiteBtn>Register</WhiteBtn></Link>
-                    <i className="fad fa-5x fa-cut fa-rotate-180 fade-in"></i>
+                    <i className="fad fa-4x fa-cut fa-rotate-180 fade-in set-size"></i>
                 </MainHeader>
                 </div> 
                 <ServicesComp />
