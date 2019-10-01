@@ -11,7 +11,7 @@ export default class UserDash extends Component {
         render: false,
         userRender: false,
         renderPaw: true,
-        username: ""
+        loginName: ""
     }
     componentDidMount() {
         this.getUser()
@@ -20,7 +20,7 @@ export default class UserDash extends Component {
         Axios.get('/auth/session').then(res => {
             if(res.data.user){
                 this.setState({
-                    username: res.data.user.username
+                    loginName: res.data.user.login_name
                 })
             }
         })
@@ -49,13 +49,13 @@ export default class UserDash extends Component {
     }
     render() {
         // console.log(this.state.renderPaw)
-        const { renderPaw, username } = this.state
-        console.log(username)
+        const { renderPaw, loginName } = this.state
+        console.log(loginName)
         return (
             <div>
             <UserDashHeader>
                 <div>
-                <UserDashTitle style={{fontWeight: 'bold'}} >{username}</UserDashTitle>    
+                <UserDashTitle style={{fontWeight: 'bold'}} >{loginName}</UserDashTitle>    
                 <i className="fad fa-cut sissors"></i>
                 </div>
                 <button onClick={() => this.appClick()}  className='btn btn1' >Set Up Appointment</button>

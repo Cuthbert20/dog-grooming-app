@@ -5,6 +5,7 @@ import axios from "axios";
 import {AddDogContainer, DogUpdateList, SelectDogDrop, DogImg  } from '../../style'
 import Dropzone from 'react-dropzone'
 import Swal from 'sweetalert2'
+import { withRouter } from 'react-router-dom'
 
 const CLOUDINARY_UPLOAD_PRESET = process.env.REACT_APP_COUDINARY_UPLOAD_PRESET; //how to grab .env info on the front end
 const REACT_APP_CLOUDINARY_CLOUD_NAME = process.env.REACT_APP_CLOUDINARY_CLOUD_NAME;
@@ -94,11 +95,8 @@ class UpdateUser extends Component {
     const { dog_breed, dog_name, dog_img} = this.state;
     axios.post(`/auth/adddog`, { dog_breed, dog_name, dog_img }).then(() => {
       Swal.fire(`your doggy has been added`)
-    });
+    });//I NEED TO SET DISPLAY TO NONE FOR COMPONENT ON CLICK
   };
-  // buttonChange(body){
-  //     axios.put(`/auth/update`,body)
-  // }
   render() {
     // console.log(this.props)
     console.log(this.state.imgApi)
@@ -136,7 +134,6 @@ class UpdateUser extends Component {
 
             <AddDogContainer>
           <li>
-          <i className="fad fa-dog "></i>
             <input
               className='dog-input'
               onChange={e => this.inputChange(e, "dog_name")}
@@ -144,7 +141,6 @@ class UpdateUser extends Component {
               placeholder="Enter Dog Name"
               type="text"
             />
-            <span onClick={() => this.buttonClick()} ><i className="fad fa-check fa-arrow-right"></i></span>
           </li>
           </AddDogContainer>
           <br/>
@@ -154,24 +150,22 @@ class UpdateUser extends Component {
             accept="image/*" //allows any image type. You can be more explicit to limit only certain file types, e.g. accept="image/jpg,image/png"
             onDrop={this.onImageDrop.bind(this)} //method fired when image is uploaded
           >
-            {({ getRootProps, getInputProps }) => { //Dropzone code I really don't understand
+            {({ getRootProps, getInputProps }) => { //Dropzone code for cloudinary
               return (
                 <div {...getRootProps()}>
                   <input {...getInputProps()} />
                   {
                     <p style={{background: 'white'}} >
-                      Click to select files to upload.
+                      Click Here To Select Files To Upload.
                     </p>
                   }
                 </div>
               );
             }}
           </Dropzone>
-          {/* <li><input onChange={e => this.inputChange(e, "username")} value={username} placeholder='Ower Name' type="text"/></li>
-                    <li><input onChange={e => this.inputChange(e, "phone")} value={phone} placeholder='Phone Number' type="text"/></li> */}
-          {/* <button onClick={() => this.buttonChange()}>Submit</button> */}
           {userImages}
         </DogUpdateList>
+        <button className='btn btn1' onClick={() => this.buttonClick()}>Add your puppy</button>
       </div>
     );
   }
@@ -186,4 +180,4 @@ function mapStateToProps(reduxState) {
 export default connect(
   mapStateToProps,
   {}
-)(UpdateUser);
+)(withRouter(UpdateUser));

@@ -19,11 +19,11 @@ i {
 }
 
 .dog-input {
-    padding: 10px 0;
+    padding: 5px 0;
     font-size: 1rem;
     border: none;
     outline: none;
-    flex-grow: 3;
+    flex-grow: 2;
     font-family: inherit;
     background: transparent;
     text-align: center;

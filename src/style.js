@@ -335,7 +335,7 @@ export const AddDogContainer = styled.article `
     display: flex;
     align-items: center;
     justify-content: space-around;
-    width: 420px;
+    max-width: 325px;
     margin: 40px auto 0;
     padding: 7px 0;
     border-radius: 4px;
@@ -375,10 +375,10 @@ export const UserDashHeader = styled.main `
 // UserDogs Component
 
 export const DogImg = styled.img `
-    height: 225px;
-    width: 225px;
+    max-height: 225px;
+    max-width: 225px;
     object-fit: scale-down;
-    border-radius: 100px 30px 100px 30px;
+    border-radius: 10px;
     animation: ${FadeIn} 1s linear;
     margin: 0 2px 0 2px;
     @media (max-width: 700px){

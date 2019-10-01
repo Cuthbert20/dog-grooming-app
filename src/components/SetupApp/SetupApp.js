@@ -54,7 +54,7 @@ class SetupApp extends Component {
 
     }
     backClick = () => {
-        this.props.history.push('/')
+        this.props.history.push('/dashboard')
     }
     render() {
         // console.log(this.state)
