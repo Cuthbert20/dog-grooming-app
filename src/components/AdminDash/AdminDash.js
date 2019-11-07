@@ -52,7 +52,7 @@ class AdminDash extends Component {
     }
     render() {
         const { bookings, displayDetails  } = this.state
-        console.log(this.state)
+        // console.log(this.state)
         // const service = bookings[this.state.index].service_name
         const allBookings = bookings.map(val => {
             return(

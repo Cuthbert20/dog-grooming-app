@@ -19,7 +19,7 @@ export default class AddUserInfo extends Component {
         const {username, phone} = this.state
         axios.put(`/auth/userinfo`, {username, phone})
         .then(res => {
-            console.log(res.data[0].login_name)
+            // console.log(res.data[0].login_name)
             Swal.fire(`${res.data[0].login_name} has been updated`)
         })
     }
